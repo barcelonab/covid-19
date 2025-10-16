@@ -128,7 +128,7 @@ table _measures
 		displayFolder: Death Cases
 		lineageTag: 65e1dd18-4a00-40e0-ad16-4a49df27c386
 
-	measure 'Growth Rate %' = ```
+	measure 'Growth Rate Total Cases %' = ```
 			VAR _month = CALCULATE([Total Cases TD], 
 			                        DateTable[Date] = EOMONTH(MAX(DateTable[Date]), -1)
 			                        )
@@ -158,10 +158,10 @@ table _measures
 			
 			```
 		formatString: 0.00%;-0.00%;0.00%
-		displayFolder: Growth Rate
+		displayFolder: Growth Rate\Total Cases
 		lineageTag: c5017b9f-b5ba-4b4d-9989-2c318fdf175b
 
-	measure 'Growth Rate Total' = ```
+	measure 'Growth Rate Total Cases' = ```
 			VAR _month = CALCULATE([Total Cases TD], 
 			                        DateTable[Date] = EOMONTH(MAX(DateTable[Date]), -1)
 			                        )
@@ -185,10 +185,10 @@ table _measures
 			                    )
 			```
 		formatString: #,0
-		displayFolder: Growth Rate
+		displayFolder: Growth Rate\Total Cases
 		lineageTag: c00cf2ca-2aca-4329-8226-59e849237c01
 
-	measure Label_Total_Increase_Decrease_Growth_Rate = ```
+	measure Label_Total_Increase_Decrease_Growth_Rate_Total_Cases = ```
 			VAR _month = CALCULATE([Total Cases TD], 
 			                                                    DateTable[Date] = EOMONTH(MAX(DateTable[Date]), -1)
 			                                                    )
@@ -223,8 +223,52 @@ table _measures
 			                                                            )
 			                                                )
 			```
-		displayFolder: Growth Rate
+		displayFolder: Growth Rate\Total Cases
 		lineageTag: 79f48080-fb55-483a-acdc-a939c4b62f04
+
+	measure 'Label Title' = "Covid Cases as of " & FORMAT(MIN(DateTable[Date]), "mmm dd, YYYY") & " - " & FORMAT(MAX(DateTable[Date]), "mmm dd, YYYY")
+		lineageTag: 11ee275d-ff25-4b15-9682-2bb0dc9b77f4
+
+	measure 'Growth Rate Positive Cases' = ```
+			VAR _maxdatemonth = MAX(DateTable[Date])
+			                VAR _endofmonth = EOMONTH(_maxdatemonth, -1)
+			                VAR _startofmonth = DATE(YEAR(_endofmonth), MONTH(_endofmonth), 1)
+			                VAR _month = CALCULATE(SUM(Covid_Cases[positive_increase_from_previous_day]), 
+			                                    DateTable[Date] >= _startofmonth && 
+			                                    DateTable[Date] <= _endofmonth
+			                                    )                            
+			
+			                VAR _endof15 = MAX(DateTable[Date]) - 15
+			                VAR _startof15 = DATE(YEAR(_endof15), MONTH(_endof15), DAY(_endof15)) 
+			                VAR _15days = CALCULATE(SUM(Covid_Cases[positive_increase_from_previous_day]),
+			                                    DateTable[Date] >= _startof15 &&
+			                                    DateTable[Date] <= MAX(DateTable[Date])
+			                                    )
+			
+			                VAR _endofweek = MAX(DateTable[Date]) - 7
+			                VAR _startofweek = DATE(YEAR(_endofweek), MONTH(_endofweek), DAY(_endofweek)) 
+			                VAR _week = CALCULATE(SUM(Covid_Cases[positive_increase_from_previous_day]),
+			                                    DateTable[Date] >= _startofweek &&
+			                                    DateTable[Date] <= MAX(DateTable[Date])
+			                                    )
+			
+			                RETURN
+			                    SWITCH(SELECTEDVALUE('Growth Rate'[Interval]),
+			                        "Month",
+			                        _month,
+			                        "15 Days",
+			                        _15days,
+			                        "Week",
+			                         _week
+			                    )
+			```
+		formatString: #,0
+		displayFolder: Growth Rate\Positive Cases
+		lineageTag: 2d54d198-e6a2-4962-9057-35fc6f52d6f0
+
+	measure 'Growth Rate Positive Case %'
+		displayFolder: Growth Rate\Positive Cases
+		lineageTag: 8dd84376-cdeb-441c-bd5e-d40313125196
 
 	partition _measures = m
 		mode: import
