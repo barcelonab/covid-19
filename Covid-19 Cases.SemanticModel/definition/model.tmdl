@@ -1,0 +1,22 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	discourageImplicitMeasures
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["Covid_Cases","_measures","Growth Rate"]
+
+annotation PBI_ProTooling = ["CalcGroup","DevMode"]
+
+ref table Covid_Cases
+ref table _measures
+ref table DateTable
+ref table 'Growth Rate'
+
+ref cultureInfo en-US
+

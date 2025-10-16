@@ -1,0 +1,240 @@
+table _measures
+	lineageTag: 6096b91c-6855-4cd7-8d19-89eb00b314d1
+
+	measure 'Total Positive Cases TD' = CALCULATE(SUM(Covid_Cases[positive]), DateTable[Date] = MAX(DateTable[Date]))
+		formatString: #,0
+		displayFolder: Positive Cases
+		lineageTag: 53d32988-9800-4a5d-a410-68e339b44065
+
+	measure 'Total Death Cases TD' = CALCULATE(SUM(Covid_Cases[death]), DateTable[Date] = MAX(DateTable[Date]))
+		formatString: #,0
+		displayFolder: Death Cases
+		lineageTag: 5a6db74d-3707-42b0-acbd-0c81f12338cd
+
+	measure 'Total Cases TD' = CALCULATE(SUM(Covid_Cases[total_cases_positive + negative]), DateTable[Date] = MAX(DateTable[Date]))
+		formatString: #,0
+		displayFolder: Total Cases
+		lineageTag: 457f0dba-0950-4e0b-b3f8-6732c5510ad7
+
+	measure 'Total Recovered Cases TD' = CALCULATE(SUM(Covid_Cases[recovered]), DateTable[Date] = MAX(DateTable[Date]))
+		formatString: #,0
+		displayFolder: Recovered Cases
+		lineageTag: b23815d5-adb0-4ca7-9868-2bc5fff8edea
+
+	measure 'Increase of positive Cases from Yesterday' = CALCULATE(SUM(Covid_Cases[positive_increase_from_previous_day]), DateTable[Date] = MAX(DateTable[Date]))
+		formatString: #,0
+		displayFolder: Positive Cases
+		lineageTag: 84dc6e8a-88ff-4dbc-b0c7-54f9ca84f403
+
+	measure Label_Positive_Increase_Decrease_Yesterday = ```
+			VAR _positiveincrease = CALCULATE(SUM(Covid_Cases[positive]), DateTable[Date] = MAX(DateTable[Date]))
+			
+			                                    RETURN
+			                                        SWITCH(TRUE(),
+			                                        _positiveincrease > 0, "🔺 from yesterday",
+			                                        _positiveincrease < 0, "🔻 from yesterday",
+			                                        "🟰 from yesterday"
+			                                        )
+			                                            
+			```
+		displayFolder: Positive Cases
+		lineageTag: cee5aea1-c4af-4938-9a87-fde7188918c2
+
+	measure '% Positive Cases Increase' = DIVIDE([Increase of positive Cases from Yesterday], [Total Positive Cases TD])
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Positive Cases
+		lineageTag: 78d12c20-8c51-4b13-bcc9-4462e34088c0
+
+	measure 'Increase of Total Cases yesterday' = ```
+			VAR _prevdate = MAX(DateTable[Date]) - 1
+			                                    VAR _prevtot = CALCULATE(SUM(Covid_Cases[total_cases_positive + negative]), DateTable[Date] = _prevdate)
+			
+			                                    RETURN
+			                                        [Total Cases TD] - _prevtot                                   
+			```
+		formatString: #,0
+		displayFolder: Total Cases
+		lineageTag: d5e431f8-1f87-4536-b9a5-67338dd3ec3c
+
+	measure Label_Total_Increase_Decrease_Yesterday =
+			VAR _prevdate = MAX(DateTable[Date]) -1
+			                                    VAR _totyesterday = CALCULATE(SUM(Covid_Cases[total_cases_positive + negative]), DateTable[Date] = _prevdate)
+			
+			                                    RETURN
+			                                        SWITCH(TRUE(),
+			                                        [Total Cases TD] > _totyesterday, "🔺 from yesterday",
+			                                        [Total Cases TD] < _totyesterday, "🔻 from yesterday",
+			                                        "🟰 from yesterday"
+			                                        )
+		displayFolder: Total Cases
+		lineageTag: 29149d3d-7d5e-4e24-8050-baf1603d975c
+
+	measure '% Total Cases Increase' = DIVIDE([Increase of Total Cases yesterday], [Total Cases TD])
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Total Cases
+		lineageTag: 25f3e232-4bd2-4fd0-b7a8-3f0577c8836e
+
+	measure Label_Recovered_Increase_Decrease_Yesterday =
+			VAR _prevdate = MAX(DateTable[Date]) -1
+			                                    VAR _totyesterday = CALCULATE(SUM(Covid_Cases[recovered]), DateTable[Date] = _prevdate)
+			
+			                                    RETURN
+			                                        SWITCH(TRUE(),
+			                                        [Total Recovered Cases TD] > _totyesterday, "🔺 from yesterday",
+			                                        [Total Recovered Cases TD] < _totyesterday, "🔻 from yesterday",
+			                                        "🟰 from yesterday"
+			                                        )
+		displayFolder: Recovered Cases
+		lineageTag: 6a5c5f4d-5125-4347-bd39-fcc161c230c6
+
+	measure 'Increase of Recovered Cases yesterday' =
+			VAR _prevdate = MAX(DateTable[Date]) - 1
+			                                        VAR _prevtot = CALCULATE(SUM(Covid_Cases[recovered]), DateTable[Date] = _prevdate)
+			
+			                                        RETURN
+			                                        [Total Recovered Cases TD] - _prevtot
+		formatString: #,0
+		displayFolder: Recovered Cases
+		lineageTag: e3f8fa1c-57ee-46be-9821-ad417ca23787
+
+	measure '% Recovered Cases Increase' = DIVIDE([Increase of Recovered Cases yesterday], [Total Recovered Cases TD])
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Recovered Cases
+		lineageTag: 718a0ccc-17f5-44df-b195-9a7fbc39061f
+
+	measure Label_Death_Increase_Decrease_from_Yesterday = ```
+			VAR _deathincrease = CALCULATE(SUM(Covid_Cases[death_increase_calculated_from_current day - previous day]), 
+			                                                    DateTable[Date] = MAX(DateTable[Date]))
+			
+			                                    RETURN
+			                                        SWITCH(TRUE(),
+			                                        _deathincrease > 0, "🔺 from yesterday",
+			                                        _deathincrease < 0, "🔻 from yesterday",
+			                                        "🟰 from yesterday"
+			                                        )
+			```
+		displayFolder: Death Cases
+		lineageTag: 48d711a1-3c2d-4697-b533-810366dfb391
+
+	measure 'Increase of Death Cases from Yesterday' =
+			CALCULATE(SUM(Covid_Cases[death_increase_calculated_from_current day - previous day]),
+			                                                    DateTable[Date] = MAX(DateTable[Date]))
+		formatString: 0
+		displayFolder: Death Cases
+		lineageTag: 911a1c77-9cce-4af1-bc17-33d2c0bff706
+
+	measure '% Death Cases Increase' = DIVIDE([Increase of Death Cases from Yesterday], [Total Death Cases TD])
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Death Cases
+		lineageTag: 65e1dd18-4a00-40e0-ad16-4a49df27c386
+
+	measure 'Growth Rate %' = ```
+			VAR _month = CALCULATE([Total Cases TD], 
+			                        DateTable[Date] = EOMONTH(MAX(DateTable[Date]), -1)
+			                        )
+			
+			                VAR _15days = CALCULATE([Total Cases TD],
+			                        DateTable[Date] = (MAX(DateTable[Date]) - 15)
+			                        )
+			
+			                VAR _week = CALCULATE([Total Cases TD],
+			                        DateTable[Date] = MAX(DateTable[Date]) - 7
+			                        )
+			
+			                RETURN
+			                    SWITCH(SELECTEDVALUE('Growth Rate'[Interval]),
+			                        "Month",
+			                        DIVIDE(([Total Cases TD] - _month), 
+			                                _month),
+			                        "15 Days",
+			                        DIVIDE(([Total Cases TD] - _15days), 
+			                                _15days),
+			                        "Week",
+			                        DIVIDE(([Total Cases TD] - _week), 
+			                                _week)
+			                    )
+			
+			
+			
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Growth Rate
+		lineageTag: c5017b9f-b5ba-4b4d-9989-2c318fdf175b
+
+	measure 'Growth Rate Total' = ```
+			VAR _month = CALCULATE([Total Cases TD], 
+			                        DateTable[Date] = EOMONTH(MAX(DateTable[Date]), -1)
+			                        )
+			
+			                VAR _15days = CALCULATE([Total Cases TD],
+			                        DateTable[Date] = (MAX(DateTable[Date]) - 15)
+			                        )
+			
+			                VAR _week = CALCULATE([Total Cases TD],
+			                        DateTable[Date] = MAX(DateTable[Date]) - 7
+			                        )
+			
+			                RETURN
+			                    SWITCH(SELECTEDVALUE('Growth Rate'[Interval]),
+			                        "Month",
+			                        [Total Cases TD] - _month,
+			                        "15 Days",
+			                        [Total Cases TD] - _15days,
+			                        "Week",
+			                        [Total Cases TD] - _week
+			                    )
+			```
+		formatString: #,0
+		displayFolder: Growth Rate
+		lineageTag: c00cf2ca-2aca-4329-8226-59e849237c01
+
+	measure Label_Total_Increase_Decrease_Growth_Rate = ```
+			VAR _month = CALCULATE([Total Cases TD], 
+			                                                    DateTable[Date] = EOMONTH(MAX(DateTable[Date]), -1)
+			                                                    )
+			
+			                                            VAR _15days = CALCULATE([Total Cases TD],
+			                                                    DateTable[Date] = (MAX(DateTable[Date]) - 15)
+			                                                    )
+			
+			                                            VAR _week = CALCULATE([Total Cases TD],
+			                                                    DateTable[Date] = MAX(DateTable[Date]) - 7
+			                                                    )
+			
+			                                            RETURN
+			                                                SWITCH(SELECTEDVALUE('Growth Rate'[Interval]),
+			                                                    "Month",
+			                                                        SWITCH(TRUE(),
+			                                                            [Total Cases TD] > _month, "🔺 from previous month",
+			                                                            [Total Cases TD] < _month, "🔻 from previous month",
+			                                                            "🟰 from previous month"
+			                                                             ),
+			                                                    "15 Days",
+			                                                        SWITCH(TRUE(),
+			                                                            [Total Cases TD] > _15days, "🔺 from last 15 Days",
+			                                                            [Total Cases TD] < _15days, "🔻 from last 15 Days",
+			                                                            "🟰 from last 15 Days"
+			                                                            ),
+			                                                    "Week",
+			                                                        SWITCH(TRUE(),
+			                                                            [Total Cases TD] > _week, "🔺 from previous week",
+			                                                            [Total Cases TD] < _week, "🔻 from previous week",
+			                                                            "🟰 from previous week"
+			                                                            )
+			                                                )
+			```
+		displayFolder: Growth Rate
+		lineageTag: 79f48080-fb55-483a-acdc-a939c4b62f04
+
+	partition _measures = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

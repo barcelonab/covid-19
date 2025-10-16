@@ -1,0 +1,4 @@
+relationship c23e252f-449b-c5f9-cacf-a6c88e2b7054
+	fromColumn: Covid_Cases.date
+	toColumn: DateTable.Date
+

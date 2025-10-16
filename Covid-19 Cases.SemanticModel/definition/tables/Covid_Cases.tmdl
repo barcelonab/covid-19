@@ -1,0 +1,142 @@
+table Covid_Cases
+	lineageTag: b6b12f13-8455-4702-914b-df49367e2e02
+
+	column date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 7ba54e8a-1216-419a-a416-11a9ec5a8d89
+		summarizeBy: none
+		sourceColumn: date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column state
+		dataType: string
+		lineageTag: d1475e5f-042f-4f52-9bf4-aa920e68c9fc
+		summarizeBy: none
+		sourceColumn: state
+
+		annotation SummarizationSetBy = Automatic
+
+	column positive
+		dataType: int64
+		formatString: 0
+		lineageTag: 5f9836b7-6288-40b5-badf-a3e09f368ccf
+		summarizeBy: sum
+		sourceColumn: positive
+
+		annotation SummarizationSetBy = Automatic
+
+	column negative
+		dataType: double
+		formatString: 0
+		lineageTag: cc4e7b32-07b9-4968-be94-61c762f7ae59
+		summarizeBy: sum
+		sourceColumn: negative
+
+		annotation SummarizationSetBy = Automatic
+
+	column hospitalized_currently
+		dataType: double
+		formatString: 0
+		lineageTag: 1c536784-0652-4556-89a2-1e6b6edd760a
+		summarizeBy: sum
+		sourceColumn: hospitalized_currently
+
+		annotation SummarizationSetBy = Automatic
+
+	column recovered
+		dataType: double
+		formatString: 0
+		lineageTag: f2b2a103-ab8f-49e9-8ec4-893ec156dcab
+		summarizeBy: sum
+		sourceColumn: recovered
+
+		annotation SummarizationSetBy = Automatic
+
+	column death
+		dataType: double
+		formatString: 0
+		lineageTag: ce8807a1-bd84-43f1-a662-ac8208ec6b41
+		summarizeBy: sum
+		sourceColumn: death
+
+		annotation SummarizationSetBy = Automatic
+
+	column hospitalized
+		dataType: double
+		formatString: 0
+		lineageTag: eb7c2189-8032-4a84-8e4d-644caa7ab829
+		summarizeBy: sum
+		sourceColumn: hospitalized
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'total_cases_positive + negative'
+		dataType: int64
+		formatString: 0
+		lineageTag: d9f3ca03-ce07-4e6b-b06d-57ac66d5a6d4
+		summarizeBy: sum
+		sourceColumn: total_cases_positive + negative
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'death_increase_calculated_from_current day - previous day'
+		dataType: int64
+		formatString: 0
+		lineageTag: 2d01a3fe-34d4-447a-83c4-a88afb8877d5
+		summarizeBy: sum
+		sourceColumn: death_increase_calculated_from_current day - previous day
+
+		annotation SummarizationSetBy = Automatic
+
+	column hospitalized_increase
+		dataType: int64
+		formatString: 0
+		lineageTag: 7f1bcf2f-b1ae-495f-a261-d38d804a7cf2
+		summarizeBy: sum
+		sourceColumn: hospitalized_increase
+
+		annotation SummarizationSetBy = Automatic
+
+	column negative_increase_from_previous_day
+		dataType: int64
+		formatString: 0
+		lineageTag: 8c66b1d2-57c6-4380-8a51-fc8fab00fe25
+		summarizeBy: sum
+		sourceColumn: negative_increase_from_previous_day
+
+		annotation SummarizationSetBy = Automatic
+
+	column positive_increase_from_previous_day
+		dataType: int64
+		formatString: 0
+		lineageTag: 6537d62e-f429-42c6-ab8c-1a0884cbd527
+		summarizeBy: sum
+		sourceColumn: positive_increase_from_previous_day
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Covid_Cases = m
+		mode: import
+		source =
+				let
+				    Source = Json.Document(File.Contents("D:\Sample Database\JSON\covid_tracking.json")),
+				    #"Converted to Table" = Table.FromList(Source, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+				    #"Expanded Column1" = Table.ExpandRecordColumn(#"Converted to Table", "Column1", {"date", "state", "positive", "negative", "pending", "hospitalized_currently", "hospitalized_cumulative", "in_icu_currently", "on_ventilator_currently", "in_icu_cumulative", "on_ventilator_cumulative", "recovered", "last_update_et", "hash", "date_checked", "death", "hospitalized", "total", "total_test_results", "pos_neg", "fips", "death_increase", "hospitalized_increase", "negative_increase", "positive_increase", "total_test_results_increase", "fips_code", "iso_subdivision", "load_time", "iso_country"}, {"date", "state", "positive", "negative", "pending", "hospitalized_currently", "hospitalized_cumulative", "in_icu_currently", "on_ventilator_currently", "in_icu_cumulative", "on_ventilator_cumulative", "recovered", "last_update_et", "hash", "date_checked", "death", "hospitalized", "total", "total_test_results", "pos_neg", "fips", "death_increase", "hospitalized_increase", "negative_increase", "positive_increase", "total_test_results_increase", "fips_code", "iso_subdivision", "load_time", "iso_country"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded Column1",{{"date", type date}, {"state", type text}, {"positive", Int64.Type}, {"negative", Int64.Type}, {"pending", Int64.Type}, {"hospitalized_currently", Int64.Type}, {"hospitalized_cumulative", Int64.Type}, {"in_icu_currently", Int64.Type}, {"on_ventilator_currently", Int64.Type}, {"in_icu_cumulative", Int64.Type}, {"on_ventilator_cumulative", Int64.Type}, {"recovered", Int64.Type}, {"last_update_et", type datetime}, {"hash", type text}, {"date_checked", type datetime}, {"death", Int64.Type}, {"hospitalized", Int64.Type}, {"total", Int64.Type}, {"total_test_results", Int64.Type}, {"pos_neg", Int64.Type}, {"fips", Int64.Type}, {"death_increase", Int64.Type}, {"hospitalized_increase", Int64.Type}, {"negative_increase", Int64.Type}, {"positive_increase", Int64.Type}, {"total_test_results_increase", Int64.Type}, {"fips_code", Int64.Type}, {"iso_subdivision", type text}, {"load_time", type datetime}, {"iso_country", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"pending", "in_icu_currently", "on_ventilator_currently", "in_icu_cumulative", "on_ventilator_cumulative", "last_update_et", "hash", "fips", "fips_code", "iso_subdivision", "load_time", "iso_country", "date_checked", "hospitalized_cumulative", "pos_neg"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"negative_increase", "negative_increase_from_previous_day"}, {"positive_increase", "positive_increase_from_previous_day"}, {"total_test_results_increase", "total_test_results_increase_from_previous_day"}}),
+				    #"Removed Columns1" = Table.RemoveColumns(#"Renamed Columns",{"total_test_results", "total_test_results_increase_from_previous_day"}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Removed Columns1",{{"death_increase", "death_increase_calculated_from_current day - previous day"}, {"total", "total_cases"}}),
+				    #"Replaced Value null to 0" = Table.ReplaceValue(#"Renamed Columns1",null,0,Replacer.ReplaceValue,{"negative", "hospitalized_currently", "recovered", "death", "hospitalized"}),
+				    #"Renamed Columns2" = Table.RenameColumns(#"Replaced Value null to 0",{{"total_cases", "total_cases_positive + negative"}})
+				in
+				    #"Renamed Columns2"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

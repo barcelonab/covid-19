@@ -1,0 +1,2573 @@
+cultureInfo en-US
+
+	linguisticMetadata =
+			{
+			  "Version": "4.1.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "covid_case": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Covid_Cases"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "covid case": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Covid_Cases": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "covid situation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "covid circumstance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "covid instance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "covid event": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "covid occasion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "covid incident": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "covid illustration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "covid paradigm": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "covid item": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.461
+			          }
+			        },
+			        {
+			          "covid example": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.461
+			          }
+			        }
+			      ]
+			    },
+			    "covid_case.date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Covid_Cases",
+			          "ConceptualProperty": "date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "covid_case.state": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Covid_Cases",
+			          "ConceptualProperty": "state"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "state": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "location": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "province": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "territory": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "nation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "condition": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "country": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ]
+			    },
+			    "covid_case.positive": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Covid_Cases",
+			          "ConceptualProperty": "positive"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "positive": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "encouraging": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "affirmative": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "progressive": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "up": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "upbeat": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "activist": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "clear": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "assured": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        }
+			      ]
+			    },
+			    "covid_case.negative": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Covid_Cases",
+			          "ConceptualProperty": "negative"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "negative": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "undesirable": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "damaging": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "downbeat": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "depressing": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "disapproving": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "discouraging": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        }
+			      ]
+			    },
+			    "covid_case.hospitalized_currently": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Covid_Cases",
+			          "ConceptualProperty": "hospitalized_currently"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "hospitalized currently": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "hospitalized_currently": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "covid_case.recovered": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Covid_Cases",
+			          "ConceptualProperty": "recovered"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "recovered": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "healthier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "improved": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "covid_case.death": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Covid_Cases",
+			          "ConceptualProperty": "death"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "death": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "expiry": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "bereavement": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "loss": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "demise": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "passing": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "decease": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "fatality": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "casualty": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "mortality": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "killing": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        }
+			      ]
+			    },
+			    "covid_case.hospitalized": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Covid_Cases",
+			          "ConceptualProperty": "hospitalized"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "hospitalized": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "covid_case.total_cases_positive__negative": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Covid_Cases",
+			          "ConceptualProperty": "total_cases_positive + negative"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "total_cases_positive + negative": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "total_cases_positive + rejection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.458
+			          }
+			        },
+			        {
+			          "total_cases_positive + refusal": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.458
+			          }
+			        },
+			        {
+			          "total_cases_positive + denial": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.458
+			          }
+			        }
+			      ]
+			    },
+			    "covid_case.death_increase_calculated_from_current_day__previous_day": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Covid_Cases",
+			          "ConceptualProperty": "death_increase_calculated_from_current day - previous day"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "death_increase_calculated_from_current day - previous day": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "death_increase_calculated_from_current day previous day": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "covid_case.hospitalized_increase": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Covid_Cases",
+			          "ConceptualProperty": "hospitalized_increase"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "hospitalized increase": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "hospitalized_increase": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "increase": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "hospitalized growth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "hospitalized intensification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "hospitalized escalation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "hospitalized proliferation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "hospitalized expansion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "hospitalized multiplication": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "hospitalized buildup": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "growth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "intensification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "escalation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        }
+			      ]
+			    },
+			    "covid_case.negative_increase_from_previous_day": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Covid_Cases",
+			          "ConceptualProperty": "negative_increase_from_previous_day"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "negative increase from previous day": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "negative_increase_from_previous_day": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "negative growth from previous day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "negative intensification from previous day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "negative escalation from previous day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "negative proliferation from previous day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "negative expansion from previous day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "negative multiplication from previous day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "negative buildup from previous day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "negative upsurge from previous day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "negative surge from previous day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "negative rise from previous day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        }
+			      ]
+			    },
+			    "covid_case.positive_increase_from_previous_day": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Covid_Cases",
+			          "ConceptualProperty": "positive_increase_from_previous_day"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "positive increase from previous day": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "positive_increase_from_previous_day": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "positive growth from previous day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "positive intensification from previous day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "positive escalation from previous day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "positive proliferation from previous day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "positive expansion from previous day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "positive multiplication from previous day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "positive buildup from previous day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "positive upsurge from previous day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "positive surge from previous day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "positive rise from previous day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_measures"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "_measure": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "_ degree": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "_ quantity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "_ quota": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "_ extent": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "_ amount": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "_ portion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "_ ration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "_ size": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.total_positive_cases_TD": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_measures",
+			          "ConceptualProperty": "Total Positive Cases TD"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "total positive cases TD": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "TD": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "cases TD": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "positive cases TD": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "aggregate positive case td": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "overall positive case td": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.total_death_cases_TD": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_measures",
+			          "ConceptualProperty": "Total Death Cases TD"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "total death cases TD": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "TD": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "cases TD": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "death cases TD": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "aggregate death case td": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "overall death case td": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.total_cases_TD": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_measures",
+			          "ConceptualProperty": "Total Cases TD"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "total cases TD": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "TD": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "cases TD": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "aggregate case td": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "overall case td": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.total_recovered_cases_TD": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_measures",
+			          "ConceptualProperty": "Total Recovered Cases TD"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "total recovered cases TD": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "aggregate recovered case td": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "overall recovered case td": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "Recovered Cases TD": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "date_table": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTable"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date table": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DateTable": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "moment table": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "period table": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "date tabletop": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "date bench": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "date board": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "date counter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "date stand": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "date slab": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "date desk": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "date stall": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
+			    },
+			    "date_table.date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTable",
+			          "ConceptualProperty": "Date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "date_table.month_number": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTable",
+			          "ConceptualProperty": "MonthNumber"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "month number": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "MonthNumber": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "month no": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "mth number": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        }
+			      ]
+			    },
+			    "date_table.month": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTable",
+			          "ConceptualProperty": "Month"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        }
+			      ]
+			    },
+			    "date_table.qtr": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTable",
+			          "ConceptualProperty": "Qtr"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "qtr": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "date_table.weekday": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTable",
+			          "ConceptualProperty": "Weekdays"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "weekday": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ordinary": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "standard": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "basic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "routine": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "date_table.year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DateTable",
+			          "ConceptualProperty": "Year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    }
+			  },
+			  "Relationships": {
+			    "date_table_has_weekday": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_table": {
+			          "Target": {
+			            "Entity": "date_table"
+			          }
+			        },
+			        "date_table.weekday": {
+			          "Target": {
+			            "Entity": "date_table.weekday"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_table"
+			            },
+			            "Object": {
+			              "Role": "date_table.weekday"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_tables_have_weekdays"
+			        }
+			      ]
+			    },
+			    "date_table_has_qtr": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_table": {
+			          "Target": {
+			            "Entity": "date_table"
+			          }
+			        },
+			        "date_table.qtr": {
+			          "Target": {
+			            "Entity": "date_table.qtr"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_table"
+			            },
+			            "Object": {
+			              "Role": "date_table.qtr"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_tables_have_qtrs"
+			        }
+			      ]
+			    },
+			    "date_table_has_month": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_table": {
+			          "Target": {
+			            "Entity": "date_table"
+			          }
+			        },
+			        "date_table.month": {
+			          "Target": {
+			            "Entity": "date_table.month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_table"
+			            },
+			            "Object": {
+			              "Role": "date_table.month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_tables_have_months"
+			        }
+			      ]
+			    },
+			    "date_table_has_month_number": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_table": {
+			          "Target": {
+			            "Entity": "date_table"
+			          }
+			        },
+			        "date_table.month_number": {
+			          "Target": {
+			            "Entity": "date_table.month_number"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_table"
+			            },
+			            "Object": {
+			              "Role": "date_table.month_number"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_tables_have_month_numbers"
+			        }
+			      ]
+			    },
+			    "date_table_has_date": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_table": {
+			          "Target": {
+			            "Entity": "date_table"
+			          }
+			        },
+			        "date_table.date": {
+			          "Target": {
+			            "Entity": "date_table.date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_table"
+			            },
+			            "Object": {
+			              "Role": "date_table.date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_tables_have_dates"
+			        }
+			      ]
+			    },
+			    "covid_case_has_entity__measure_total_recovered_cases_TD": {
+			      "Binding": {
+			        "ConceptualEntity": "Covid_Cases"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "covid_case": {
+			          "Target": {
+			            "Entity": "covid_case"
+			          }
+			        },
+			        "entity__measure.total_recovered_cases_TD": {
+			          "Target": {
+			            "Entity": "entity__measure.total_recovered_cases_TD"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "covid_case"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.total_recovered_cases_TD"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "covid_cases_have_total_recovered_cases_TD"
+			        }
+			      ]
+			    },
+			    "covid_case_has_entity__measure_total_cases_TD": {
+			      "Binding": {
+			        "ConceptualEntity": "Covid_Cases"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "covid_case": {
+			          "Target": {
+			            "Entity": "covid_case"
+			          }
+			        },
+			        "entity__measure.total_cases_TD": {
+			          "Target": {
+			            "Entity": "entity__measure.total_cases_TD"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "covid_case"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.total_cases_TD"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "covid_cases_have_total_cases_TD"
+			        }
+			      ]
+			    },
+			    "covid_case_has_entity__measure_total_death_cases_TD": {
+			      "Binding": {
+			        "ConceptualEntity": "Covid_Cases"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "covid_case": {
+			          "Target": {
+			            "Entity": "covid_case"
+			          }
+			        },
+			        "entity__measure.total_death_cases_TD": {
+			          "Target": {
+			            "Entity": "entity__measure.total_death_cases_TD"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "covid_case"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.total_death_cases_TD"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "covid_cases_have_total_death_cases_TD"
+			        }
+			      ]
+			    },
+			    "covid_case_has_entity__measure_total_positive_cases_TD": {
+			      "Binding": {
+			        "ConceptualEntity": "Covid_Cases"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "covid_case": {
+			          "Target": {
+			            "Entity": "covid_case"
+			          }
+			        },
+			        "entity__measure.total_positive_cases_TD": {
+			          "Target": {
+			            "Entity": "entity__measure.total_positive_cases_TD"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "covid_case"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.total_positive_cases_TD"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "covid_cases_have_total_positive_cases_TD"
+			        }
+			      ]
+			    },
+			    "covid_case_has_positive_increase_from_previous_day": {
+			      "Binding": {
+			        "ConceptualEntity": "Covid_Cases"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "covid_case": {
+			          "Target": {
+			            "Entity": "covid_case"
+			          }
+			        },
+			        "covid_case.positive_increase_from_previous_day": {
+			          "Target": {
+			            "Entity": "covid_case.positive_increase_from_previous_day"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "covid_case"
+			            },
+			            "Object": {
+			              "Role": "covid_case.positive_increase_from_previous_day"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "covid_cases_have_positive_increase_from_previous_day"
+			        }
+			      ]
+			    },
+			    "covid_case_has_negative_increase_from_previous_day": {
+			      "Binding": {
+			        "ConceptualEntity": "Covid_Cases"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "covid_case": {
+			          "Target": {
+			            "Entity": "covid_case"
+			          }
+			        },
+			        "covid_case.negative_increase_from_previous_day": {
+			          "Target": {
+			            "Entity": "covid_case.negative_increase_from_previous_day"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "covid_case"
+			            },
+			            "Object": {
+			              "Role": "covid_case.negative_increase_from_previous_day"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "covid_cases_have_negative_increase_from_previous_day"
+			        }
+			      ]
+			    },
+			    "covid_case_has_hospitalized_increase": {
+			      "Binding": {
+			        "ConceptualEntity": "Covid_Cases"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "covid_case": {
+			          "Target": {
+			            "Entity": "covid_case"
+			          }
+			        },
+			        "covid_case.hospitalized_increase": {
+			          "Target": {
+			            "Entity": "covid_case.hospitalized_increase"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "covid_case"
+			            },
+			            "Object": {
+			              "Role": "covid_case.hospitalized_increase"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "covid_cases_have_hospitalized_increases"
+			        }
+			      ]
+			    },
+			    "covid_case_has_death_increase_calculated_from_current_day__previous_day": {
+			      "Binding": {
+			        "ConceptualEntity": "Covid_Cases"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "covid_case": {
+			          "Target": {
+			            "Entity": "covid_case"
+			          }
+			        },
+			        "covid_case.death_increase_calculated_from_current_day__previous_day": {
+			          "Target": {
+			            "Entity": "covid_case.death_increase_calculated_from_current_day__previous_day"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "covid_case"
+			            },
+			            "Object": {
+			              "Role": "covid_case.death_increase_calculated_from_current_day__previous_day"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "covid_cases_have_death_increase_calculated_from_current_day__previous_days"
+			        }
+			      ]
+			    },
+			    "covid_case_has_total_cases_positive__negative": {
+			      "Binding": {
+			        "ConceptualEntity": "Covid_Cases"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "covid_case": {
+			          "Target": {
+			            "Entity": "covid_case"
+			          }
+			        },
+			        "covid_case.total_cases_positive__negative": {
+			          "Target": {
+			            "Entity": "covid_case.total_cases_positive__negative"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "covid_case"
+			            },
+			            "Object": {
+			              "Role": "covid_case.total_cases_positive__negative"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "covid_cases_have_total_cases_positive__negatives"
+			        }
+			      ]
+			    },
+			    "covid_case_has_hospitalized": {
+			      "Binding": {
+			        "ConceptualEntity": "Covid_Cases"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "covid_case": {
+			          "Target": {
+			            "Entity": "covid_case"
+			          }
+			        },
+			        "covid_case.hospitalized": {
+			          "Target": {
+			            "Entity": "covid_case.hospitalized"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "covid_case"
+			            },
+			            "Object": {
+			              "Role": "covid_case.hospitalized"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "covid_cases_have_hospitalized"
+			        },
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "covid_case"
+			            },
+			            "Adjectives": [
+			              {
+			                "hospitalized": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Measurement": {
+			              "Role": "covid_case.hospitalized"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "hospitalized_indicates_how_hospitalized_covid_cases_are"
+			        }
+			      ]
+			    },
+			    "covid_case_has_death": {
+			      "Binding": {
+			        "ConceptualEntity": "Covid_Cases"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "covid_case": {
+			          "Target": {
+			            "Entity": "covid_case"
+			          }
+			        },
+			        "covid_case.death": {
+			          "Target": {
+			            "Entity": "covid_case.death"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "covid_case"
+			            },
+			            "Object": {
+			              "Role": "covid_case.death"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "covid_cases_have_deaths"
+			        }
+			      ]
+			    },
+			    "covid_case_has_recovered": {
+			      "Binding": {
+			        "ConceptualEntity": "Covid_Cases"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "covid_case": {
+			          "Target": {
+			            "Entity": "covid_case"
+			          }
+			        },
+			        "covid_case.recovered": {
+			          "Target": {
+			            "Entity": "covid_case.recovered"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "covid_case"
+			            },
+			            "Object": {
+			              "Role": "covid_case.recovered"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "covid_cases_have_recovered"
+			        },
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "covid_case"
+			            },
+			            "Adjectives": [
+			              {
+			                "recovered": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Measurement": {
+			              "Role": "covid_case.recovered"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "recovered_indicates_how_recovered_covid_cases_are"
+			        }
+			      ]
+			    },
+			    "covid_case_has_hospitalized_currently": {
+			      "Binding": {
+			        "ConceptualEntity": "Covid_Cases"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "covid_case": {
+			          "Target": {
+			            "Entity": "covid_case"
+			          }
+			        },
+			        "covid_case.hospitalized_currently": {
+			          "Target": {
+			            "Entity": "covid_case.hospitalized_currently"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "covid_case"
+			            },
+			            "Object": {
+			              "Role": "covid_case.hospitalized_currently"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "covid_cases_have_hospitalized_currently"
+			        }
+			      ]
+			    },
+			    "covid_case_has_negative": {
+			      "Binding": {
+			        "ConceptualEntity": "Covid_Cases"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "covid_case": {
+			          "Target": {
+			            "Entity": "covid_case"
+			          }
+			        },
+			        "covid_case.negative": {
+			          "Target": {
+			            "Entity": "covid_case.negative"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "covid_case"
+			            },
+			            "Object": {
+			              "Role": "covid_case.negative"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "covid_cases_have_negatives"
+			        }
+			      ]
+			    },
+			    "covid_case_has_positive": {
+			      "Binding": {
+			        "ConceptualEntity": "Covid_Cases"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "covid_case": {
+			          "Target": {
+			            "Entity": "covid_case"
+			          }
+			        },
+			        "covid_case.positive": {
+			          "Target": {
+			            "Entity": "covid_case.positive"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "covid_case"
+			            },
+			            "Object": {
+			              "Role": "covid_case.positive"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "covid_cases_have_positives"
+			        }
+			      ]
+			    },
+			    "covid_case_has_state": {
+			      "Binding": {
+			        "ConceptualEntity": "Covid_Cases"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "covid_case": {
+			          "Target": {
+			            "Entity": "covid_case"
+			          }
+			        },
+			        "covid_case.state": {
+			          "Target": {
+			            "Entity": "covid_case.state"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "covid_case"
+			            },
+			            "Object": {
+			              "Role": "covid_case.state"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "covid_cases_have_states"
+			        }
+			      ]
+			    },
+			    "covid_case_has_date": {
+			      "Binding": {
+			        "ConceptualEntity": "Covid_Cases"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "covid_case": {
+			          "Target": {
+			            "Entity": "covid_case"
+			          }
+			        },
+			        "covid_case.date": {
+			          "Target": {
+			            "Entity": "covid_case.date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "covid_case"
+			            },
+			            "Object": {
+			              "Role": "covid_case.date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "covid_cases_have_dates"
+			        }
+			      ]
+			    },
+			    "covid_case_in_state": {
+			      "Binding": {
+			        "ConceptualEntity": "Covid_Cases"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "covid_case": {
+			          "Target": {
+			            "Entity": "covid_case"
+			          }
+			        },
+			        "covid_case.state": {
+			          "Target": {
+			            "Entity": "covid_case.state"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "Where": {
+			          "Role": "covid_case.state"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "covid_case"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "covid_case.state"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "covid_cases_are_in_states"
+			        }
+			      ]
+			    },
+			    "date_table_has_year": {
+			      "Binding": {
+			        "ConceptualEntity": "DateTable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_table": {
+			          "Target": {
+			            "Entity": "date_table"
+			          }
+			        },
+			        "date_table.year": {
+			          "Target": {
+			            "Entity": "date_table.year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_table"
+			            },
+			            "Object": {
+			              "Role": "date_table.year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_tables_have_years"
+			        }
+			      ]
+			    },
+			    "covid_case_has_date_table": {
+			      "Binding": {
+			        "ConceptualEntity": "Covid_Cases"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "covid_case": {
+			          "Target": {
+			            "Entity": "covid_case"
+			          }
+			        },
+			        "date_table": {
+			          "Target": {
+			            "Entity": "date_table"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "covid_case"
+			            },
+			            "Object": {
+			              "Role": "date_table"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "covid_cases_have_date_tables"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_table"
+			            },
+			            "Object": {
+			              "Role": "covid_case"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_tables_have_covid_cases"
+			        }
+			      ]
+			    }
+			  },
+			  "Agents": {
+			    "Internal": {
+			      "Version": "1.1.0"
+			    }
+			  }
+			}
+		contentType: json
+
