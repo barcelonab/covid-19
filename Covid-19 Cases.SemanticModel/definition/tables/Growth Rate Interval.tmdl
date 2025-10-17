@@ -1,0 +1,26 @@
+table 'Growth Rate Interval'
+	lineageTag: d7f7551c-6e20-4cf9-9fd1-18f2169fe5b6
+
+	measure 'Growth Rate Interval Value' = SELECTEDVALUE('Growth Rate Interval'[Growth Rate Interval], 15)
+		formatString: 0
+		lineageTag: 8c9bfb0b-989c-44fe-a97d-675aef430552
+
+	column 'Growth Rate Interval'
+		formatString: 0
+		lineageTag: 483ee314-b1f1-41de-bec2-bbf9163354be
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Growth Rate Interval' = calculated
+		mode: import
+		source = GENERATESERIES(2, 365, 1)
+
+	annotation PBI_Id = 5c59a578f82a4cc9ac66ec3b9b8bea3c
+

@@ -17,6 +17,7 @@ ref table Covid_Cases
 ref table _measures
 ref table DateTable
 ref table 'Growth Rate'
+ref table 'Growth Rate Interval'
 
 ref cultureInfo en-US
 
