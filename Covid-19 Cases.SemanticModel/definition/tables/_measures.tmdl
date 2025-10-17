@@ -119,7 +119,7 @@ table _measures
 	measure 'Increase of Death Cases from Yesterday' =
 			CALCULATE(SUM(Covid_Cases[death_increase_calculated_from_current day - previous day]),
 			                                                    DateTable[Date] = MAX(DateTable[Date]))
-		formatString: 0
+		formatString: #,0
 		displayFolder: Death Cases
 		lineageTag: 911a1c77-9cce-4af1-bc17-33d2c0bff706
 
@@ -129,7 +129,7 @@ table _measures
 		lineageTag: 65e1dd18-4a00-40e0-ad16-4a49df27c386
 
 	measure 'Growth Rate Total Cases %' = ```
-			VAR _maxdate = MAX(DateTable[Date]) 
+			/*VAR _maxdate = MAX(DateTable[Date]) 
 			                            VAR _month = CALCULATE([Total Cases TD], 
 			                                    DateTable[Date] = EOMONTH(_maxdate, -1)
 			                                    )
@@ -153,7 +153,19 @@ table _measures
 			                                    "Week",
 			                                    DIVIDE([Growth Rate Total Cases], 
 			                                            _week, 0)
-			                                )
+			                                )*/
+			
+			                            VAR _dateselected = MAX(DateTable[Date]) - 'Growth Rate Interval'[Growth Rate Interval Value]
+			                            VAR _total = CALCULATE([Total Cases TD],
+			                                                    DateTable[Date] =  _dateselected
+			                                                )
+			
+			                            RETURN
+			                                --_total
+			                                DIVIDE([Growth Rate Total Cases], 
+			                                        _total, 
+			                                        0
+			                                    )
 			```
 		formatString: 0.00%;-0.00%;0.00%
 		displayFolder: Growth Rate\Total Cases
@@ -183,7 +195,7 @@ table _measures
 			                                    [Total Cases TD] - _week
 			                                )*/
 			
-			                            VAR _dateselected = MAX(DateTable[Date]) - SELECTEDVALUE('Growth Rate Interval'[Growth Rate Interval])
+			                            VAR _dateselected = MAX(DateTable[Date]) - ('Growth Rate Interval'[Growth Rate Interval Value])
 			                            VAR _total = CALCULATE([Total Cases TD],
 			                                                    DateTable[Date] =  _dateselected
 			                                                )
@@ -196,7 +208,7 @@ table _measures
 		lineageTag: c00cf2ca-2aca-4329-8226-59e849237c01
 
 	measure Label_Growth_Rate_Total_Cases = ```
-			VAR _maxdate = MAX(DateTable[Date])
+			/*VAR _maxdate = MAX(DateTable[Date])
 			                                VAR _month = CALCULATE([Total Cases TD], 
 			                                                    DateTable[Date] = EOMONTH(_maxdate, -1)
 			                                                    )
@@ -229,7 +241,21 @@ table _measures
 			                                                [Total Cases TD] < _week, "🔻 from previous week",
 			                                                "🟰 from previous week"
 			                                                )
+			                                    )*/
+			
+			                                    
+			                                VAR _selecteddate = MAX(DateTable[Date]) - 'Growth Rate Interval'[Growth Rate Interval Value]
+			                                VAR _total = CALCULATE([Total Cases TD], 
+			                                                    DateTable[Date] = _selecteddate
+			                                                    )
+			
+			                                RETURN
+			                                SWITCH(TRUE(),
+			                                    [Total Cases TD] > _total, "🔺 from the last " & 'Growth Rate Interval'[Growth Rate Interval Value] & " days",
+			                                    [Total Cases TD] < _total, "🔻 from the last " & 'Growth Rate Interval'[Growth Rate Interval Value] & " days",
+			                                    "🟰 from the last " & 'Growth Rate Interval'[Growth Rate Interval Value] & " days"
 			                                    )
+			                    
 			```
 		displayFolder: Growth Rate\Total Cases
 		lineageTag: 79f48080-fb55-483a-acdc-a939c4b62f04
@@ -239,7 +265,7 @@ table _measures
 		lineageTag: 11ee275d-ff25-4b15-9682-2bb0dc9b77f4
 
 	measure 'Growth Rate Positive Cases' = ```
-			VAR _maxdate = MAX(DateTable[Date])
+			/*VAR _maxdate = MAX(DateTable[Date])
 			                VAR _endofmonth = EOMONTH(_maxdate, -1)
 			                VAR _startofmonth = DATE(YEAR(_endofmonth), MONTH(_endofmonth), 1)
 			                VAR _month = CALCULATE(SUM(Covid_Cases[positive_increase_from_previous_day]), 
@@ -269,14 +295,22 @@ table _measures
 			                        _15days,
 			                        "Week",
 			                         _week
-			                    )
+			                    )*/
+			
+			                                VAR _dateselected = MAX(DateTable[Date]) - ('Growth Rate Interval'[Growth Rate Interval Value] - 1)
+			                                VAR _total = CALCULATE(SUM(Covid_Cases[positive_increase_from_previous_day]),
+			                                                        DateTable[Date] >= _dateselected
+			                                                    )
+			
+			                                RETURN
+			                                    _total      
 			```
 		formatString: #,0
 		displayFolder: Growth Rate\Positive Cases
 		lineageTag: 2d54d198-e6a2-4962-9057-35fc6f52d6f0
 
-	measure 'Growth Rate Positive Case %' =
-			VAR _maxdate = MAX(DateTable[Date])
+	measure 'Growth Rate Positive Cases %' = ```
+			/*VAR _maxdate = MAX(DateTable[Date])
 			                                VAR _endofmonth = EOMONTH(_maxdate, -1)
 			                                VAR _startofmonth = DATE(YEAR(_endofmonth), MONTH(_endofmonth), 1)
 			                                VAR _month = CALCULATE(SUM(Covid_Cases[positive_increase_from_previous_day]),
@@ -311,13 +345,26 @@ table _measures
 			                                        "Week",
 			                                            DIVIDE([Growth Rate Positive Cases],
 			                                                    _week, 0)
-			                                    )
+			                                    )*/
+			
+			                                    VAR _dateselected = MAX(DateTable[Date]) - 'Growth Rate Interval'[Growth Rate Interval Value]
+			                                    VAR _total = CALCULATE(SUM(Covid_Cases[positive_increase_from_previous_day]),
+			                                                            DateTable[Date] <=  _dateselected
+			                                                        )
+			
+			                                    RETURN
+			                                        DIVIDE([Growth Rate Positive Cases],
+			                                                _total,
+			                                                0
+			                                            )
+			                                                        
+			```
 		formatString: 0.00%;-0.00%;0.00%
 		displayFolder: Growth Rate\Positive Cases
 		lineageTag: 8dd84376-cdeb-441c-bd5e-d40313125196
 
 	measure 'Growth Rate Recovered Cases' =
-			VAR _maxdate = MAX(DateTable[Date])
+			/*VAR _maxdate = MAX(DateTable[Date])
 			                                VAR _month = CALCULATE([Total Recovered Cases TD],
 			                                                     DateTable[Date] = EOMONTH(_maxdate, - 1)
 			                                                    )
@@ -338,13 +385,21 @@ table _measures
 			                                    [Total Recovered Cases TD] - _15days,
 			                                    "Week",
 			                                    [Total Recovered Cases TD] - _week
-			                                    )
+			                                    ) */
+			
+			                                VAR _dateselected = MAX(DateTable[Date]) - ('Growth Rate Interval'[Growth Rate Interval Value])
+			                                VAR _total = CALCULATE([Total Recovered Cases TD],
+			                                                        DateTable[Date] = _dateselected
+			                                                    )
+			
+			                                RETURN
+			                                    [Total Recovered Cases TD] - _total
 		formatString: #,0
 		displayFolder: Growth Rate\Recovered Cases
 		lineageTag: 5f070c3e-66e2-46b4-b23c-433c4a92bfa2
 
 	measure 'Growth Rate Death Cases' = ```
-			VAR _maxdate = MAX(DateTable[Date])
+			/*VAR _maxdate = MAX(DateTable[Date])
 			                            VAR _endofmonth = EOMONTH(_maxdate, -1)
 			                            VAR _startofmonth = DATE(YEAR(_endofmonth), MONTH(_endofmonth), 1)
 			                            VAR _month = CALCULATE(SUM(Covid_Cases[death_increase_calculated_from_current day - previous day]),
@@ -374,14 +429,22 @@ table _measures
 			                                        _15days,
 			                                    "Week",
 			                                        _week
-			                                    )
+			                                    )*/
+			
+			                            VAR _dateseleceted = MAX(DateTable[Date]) - ('Growth Rate Interval'[Growth Rate Interval Value] - 1)
+			                            VAR _total = CALCULATE(SUM(Covid_Cases[death_increase_calculated_from_current day - previous day]),
+			                                                    DateTable[Date] >= _dateseleceted
+			                                                )
+			
+			                            RETURN
+			                                _total
 			```
-		formatString: 0
+		formatString: #,0
 		displayFolder: Growth Rate\Death Cases
 		lineageTag: 883feb9a-836d-4ac1-b7ba-539332445354
 
-	measure Label_Growth_Rate_Positive_Cases =
-			VAR _maxdate = MAX(DateTable[Date])
+	measure Label_Growth_Rate_Positive_Cases = ```
+			/*VAR _maxdate = MAX(DateTable[Date])
 			                                VAR _endofmonth = EOMONTH(_maxdate, -1)
 			                                VAR _startofmonth = DATE(YEAR(_endofmonth), MONTH(_endofmonth), 1)
 			                                VAR _month = CALCULATE(SUM(Covid_Cases[positive_increase_from_previous_day]),
@@ -423,12 +486,26 @@ table _measures
 			                                                [Total Positive Cases TD] < _week, "🔻 from previous week",
 			                                                "🟰 from previous month"
 			                                            )
-			                                    )
+			                                    )*/
+			
+			                                    VAR _dateselected = MAX(DateTable[Date]) - 'Growth Rate Interval'[Growth Rate Interval Value]
+			                                    VAR _total = CALCULATE(SUM(Covid_Cases[positive_increase_from_previous_day]),
+			                                                            DateTable[Date] < _dateselected
+			                                                        )
+			
+			                                    RETURN
+			                                        SWITCH(TRUE(),
+			                                            [Total Positive Cases TD] > _total, "🔺 from the last " & 'Growth Rate Interval'[Growth Rate Interval Value] & " days",
+			                                            [Total Positive Cases TD] < _total, "🔻 from the last " & 'Growth Rate Interval'[Growth Rate Interval Value] & " days",
+			                                            "🟰 from the last " & 'Growth Rate Interval'[Growth Rate Interval Value] & " days"
+			                                            )
+			                                        
+			```
 		displayFolder: Growth Rate\Positive Cases
 		lineageTag: 25fe79fd-a65a-4295-ba19-6b776419e77e
 
-	measure 'Growth Rate Recovered Cases %' =
-			VAR _maxdate = MAX(DateTable[Date])
+	measure 'Growth Rate Recovered Cases %' = ```
+			/*VAR _maxdate = MAX(DateTable[Date])
 			                                VAR _month = CALCULATE([Total Recovered Cases TD],
 			                                                        DateTable[Date] = EOMONTH(_maxdate, -1)
 			                                                    )
@@ -452,13 +529,26 @@ table _measures
 			                                        "week",
 			                                            DIVIDE([Total Recovered Cases TD] - _week,
 			                                                    _week, 0 )
+			                                        )*/
+			
+			                                VAR _dateselected = MAX(DateTable[Date]) - 'Growth Rate Interval'[Growth Rate Interval Value]
+			                                VAR _total = CALCULATE([Total Recovered Cases TD],
+			                                                        DateTable[Date] = _dateselected
+			                                                    )
+			
+			                                RETURN
+			                                    DIVIDE([Growth Rate Recovered Cases],
+			                                            _total,
+			                                            0
 			                                        )
+			
+			```
 		formatString: 0.00%;-0.00%;0.00%
 		displayFolder: Growth Rate\Recovered Cases
 		lineageTag: bcae7b25-7112-4572-bc1e-accd66daa3a6
 
 	measure Label_Growth_Rate_Recovered_Cases = ```
-			VAR _maxdate = MAX(DateTable[Date])
+			/*VAR _maxdate = MAX(DateTable[Date])
 			                                VAR _month = CALCULATE([Total Recovered Cases TD],
 			                                                        DateTable[Date] = EOMONTH(_maxdate, -1)
 			                                                    )
@@ -491,13 +581,25 @@ table _measures
 			                                                [Total Recovered Cases TD] < _week, "🔻 from previous week",
 			                                                "🟰 from previous week"
 			                                                )
-			                                    )                                      
+			                                    )    */
+			
+			                                VAR _dateselected = MAX(DateTable[Date]) - 'Growth Rate Interval'[Growth Rate Interval Value]
+			                                VAR _total = CALCULATE([Total Recovered Cases TD],
+			                                                        DateTable[Date] = _dateselected
+			                                                    )
+			                                        
+			                                RETURN
+			                                    SWITCH(TRUE(),
+			                                        [Total Recovered Cases TD] > _total, "🔺 from the last " & 'Growth Rate Interval'[Growth Rate Interval Value] & " days",
+			                                        [Total Recovered Cases TD] < _total, "🔻 from the last " & 'Growth Rate Interval'[Growth Rate Interval Value] & " days",
+			                                        "🟰 from the last " & 'Growth Rate Interval'[Growth Rate Interval Value] & " days"
+			                                        )
 			```
 		displayFolder: Growth Rate\Recovered Cases
 		lineageTag: 4522a5f2-fe56-4bcb-aa76-8320e1ad58bb
 
 	measure 'Growth Rate Death Cases %' = ```
-			VAR _maxdate = MAX(DateTable[Date])
+			/*VAR _maxdate = MAX(DateTable[Date])
 			                            VAR _endofmonth = EOMONTH(_maxdate, -1)
 			                            VAR _startofmonth = DATE(YEAR(_endofmonth), MONTH(_endofmonth), 1)
 			                            VAR _month = CALCULATE(SUM(Covid_Cases[death_increase_calculated_from_current day - previous day]),
@@ -518,10 +620,37 @@ table _measures
 			                            RETURN
 			                                SWITCH(SELECTEDVALUE('Growth Rate'[Interval]),
 			                                    "Month",
-			                                        )
+			                                        )*/
+			
+			                            VAR _dateselected = MAX(DateTable[Date]) - 'Growth Rate Interval'[Growth Rate Interval Value]
+			                            VAR _total = CALCULATE(sum(Covid_Cases[death_increase_calculated_from_current day - previous day]),
+			                                                    DateTable[Date] <= _dateselected
+			                                                )
+			
+			                            RETURN
+			                                DIVIDE([Growth Rate Death Cases],
+			                                        _total,
+			                                        0
+			                                    )
 			```
+		formatString: 0.00%;-0.00%;0.00%
 		displayFolder: Growth Rate\Death Cases
 		lineageTag: 2432d348-d687-43c4-b39b-b975bbe70040
+
+	measure Label_Growth_Rate_Death_Case =
+			VAR _dateselected = MAX(DateTable[Date]) - 'Growth Rate Interval'[Growth Rate Interval Value]
+			                            VAR _total = CALCULATE(SUM(Covid_Cases[death_increase_calculated_from_current day - previous day]),
+			                                                    DateTable[Date] > _dateselected
+			                                                )
+			
+			                            RETURN
+			                                SWITCH(TRUE(),
+			                                        [Total Death Cases TD] > _total, "🔺 from the last " & 'Growth Rate Interval'[Growth Rate Interval Value] & " days",
+			                                        [Total Death Cases TD] < _total, "🔻 from the last " & 'Growth Rate Interval'[Growth Rate Interval Value] & " days",
+			                                        "🟰 from the last " & 'Growth Rate Interval'[Growth Rate Interval Value] & " days"
+			                                    )
+		displayFolder: Growth Rate\Death Cases
+		lineageTag: 7d3706d3-fb3b-48e8-a0be-88d800592333
 
 	partition _measures = m
 		mode: import
