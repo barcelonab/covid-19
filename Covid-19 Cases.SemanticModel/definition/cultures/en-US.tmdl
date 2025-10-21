@@ -603,22 +603,105 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "covid_case.total_cases_positive__negative": {
+			    "covid_case.total_cases_positive_negative": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Covid_Cases",
-			          "ConceptualProperty": "total_cases_positive + negative"
+			          "ConceptualProperty": "total_cases_positive_negative"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "total_cases_positive + negative": {
+			          "total cases positive negative": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "total_cases_positive + rejection": {
+			          "total case positive negative": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "total_cases_positive_negative": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "positive negative": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "cases positive negative": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "case positive negative": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.7566
+			          }
+			        },
+			        {
+			          "aggregate case positive negative": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "overall case positive negative": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "total case positive rejection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.464
+			          }
+			        },
+			        {
+			          "total case positive refusal": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.464
+			          }
+			        },
+			        {
+			          "total case positive denial": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.464
+			          }
+			        },
+			        {
+			          "case positive rejection": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -628,7 +711,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "total_cases_positive + refusal": {
+			          "case positive refusal": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -638,13 +721,33 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "total_cases_positive + denial": {
+			          "case positive denial": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.458
+			          }
+			        },
+			        {
+			          "positive rejection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.451
+			          }
+			        },
+			        {
+			          "positive refusal": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.451
 			          }
 			        }
 			      ]
@@ -3467,7 +3570,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "entity__measure.growth_rate_positive_case_": {
+			    "entity__measure.growth_rate_positive_cases_": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_measures",
@@ -3477,7 +3580,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "growth rate positive case %": {
+			          "growth rate positive cases %": {
 			            "State": "Generated"
 			          }
 			        },
@@ -4124,9 +4227,1348 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "entity__measure.growth_rate_death_cases_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_measures",
+			          "ConceptualProperty": "Growth Rate Death Cases %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "growth rate death cases %": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "growth rate death case percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "growth rate death case pct": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.757
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.label_growth_rate_death_case": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_measures",
+			          "ConceptualProperty": "Label_Growth_Rate_Death_Case"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "label growth rate death case": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Label_Growth_Rate_Death_Case": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "case": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "death case": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "rate death case": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "growth rate death case": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "sticker growth rate death case": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "tag growth rate death case": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "decal growth rate death case": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "label growth rate death situation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "growth rate death situation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "rate death situation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "label growth rate death circumstance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "label growth rate death instance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "label growth rate death event": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "label growth rate death occasion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.total_cases__forecast": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_measures",
+			          "ConceptualProperty": "Total Cases & Forecast"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "total cases & forecast": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "total case & prediction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.771
+			          }
+			        },
+			        {
+			          "total case & projection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.771
+			          }
+			        },
+			        {
+			          "total case & report": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
+			          }
+			        },
+			        {
+			          "total case & estimate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
+			          }
+			        },
+			        {
+			          "aggregate case & forecast": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "overall case & forecast": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.total_cases_3Month_avg": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_measures",
+			          "ConceptualProperty": "Total Cases 3-Month Avg"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "total cases 3-Month avg": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "total case 3-month average": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
+			          }
+			        },
+			        {
+			          "aggregate case 3-month avg": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "overall case 3-month avg": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.forecast_dynamic_stepwise_3Month": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_measures",
+			          "ConceptualProperty": "Forecast (Dynamic Stepwise 3-Month)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "forecast (dynamic stepwise 3-Month)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "forecast": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.total_cases_group_by_date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_measures",
+			          "ConceptualProperty": "Total Cases Group by Date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "total cases group by date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "cases group": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "total cases group": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "total case category by date": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "total case organization by date": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "total case category": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "total case organization": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "total case bracket by date": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.757
+			          }
+			        },
+			        {
+			          "total case class by date": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.757
+			          }
+			        },
+			        {
+			          "total case crew by date": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.757
+			          }
+			        },
+			        {
+			          "total case team by date": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.757
+			          }
+			        },
+			        {
+			          "case category": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "case organization": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "Total Cases": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.date_difference": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_measures",
+			          "ConceptualProperty": "Date Difference"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date difference": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "difference": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "moment difference": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "period difference": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "date alteration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "date variance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "date modification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "date transformation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "date metamorphosis": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "alteration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "variance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "modification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.forecast_group_by_datedynamic_stepwise_3Month": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_measures",
+			          "ConceptualProperty": "Forecast Group by Date(Dynamic Stepwise 3-Month)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "forecast group by date(dynamic stepwise 3-Month)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "forecast group by date": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "Forecast": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "growth_rate_interval": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Growth Rate Interval"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "growth rate interval": {
+			            "State": "Generated",
+			            "Weight": 0.87
+			          }
+			        },
+			        {
+			          "interval": {
+			            "State": "Generated",
+			            "Weight": 0.8439
+			          }
+			        },
+			        {
+			          "rate interval": {
+			            "State": "Generated",
+			            "Weight": 0.8439
+			          }
+			        },
+			        {
+			          "growth rate intermission": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "growth rate interlude": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "rate intermission": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "rate interlude": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "growth rate break": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "growth rate pause": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "growth rate recess": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "growth rate rest": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "growth rate wait": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "growth rate interim": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        }
+			      ]
+			    },
+			    "growth_rate_interval.growth_rate_interval": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Growth Rate Interval",
+			          "ConceptualProperty": "Growth Rate Interval"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "growth rate interval": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "interval": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "rate interval": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "growth rate intermission": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "growth rate interlude": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "rate intermission": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "rate interlude": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "growth rate break": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "growth rate pause": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "growth rate recess": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "growth rate rest": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "growth rate wait": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "growth rate interim": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        }
+			      ]
+			    },
+			    "growth_rate_interval.growth_rate_interval_value": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Growth Rate Interval",
+			          "ConceptualProperty": "Growth Rate Interval Value"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "growth rate interval value": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "value": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "interval value": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "rate interval value": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "growth rate interval assessment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "rate interval assessment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "interval assessment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "growth rate interval worth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "growth rate interval price": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "growth rate interval cost": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "growth rate interval charge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "growth rate interval rate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "rate interval worth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "rate interval price": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "growth_rate_interval_has_growth_rate_interval": {
+			      "Binding": {
+			        "ConceptualEntity": "Growth Rate Interval"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "growth_rate_interval": {
+			          "Target": {
+			            "Entity": "growth_rate_interval"
+			          }
+			        },
+			        "growth_rate_interval.growth_rate_interval": {
+			          "Target": {
+			            "Entity": "growth_rate_interval.growth_rate_interval"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "growth_rate_interval"
+			            },
+			            "Object": {
+			              "Role": "growth_rate_interval.growth_rate_interval"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "growth_rate_intervals_have_growth_rate_intervals"
+			        }
+			      ]
+			    },
+			    "entity__measure_has_forecast_group_by_datedynamic_stepwise_3Month": {
+			      "Binding": {
+			        "ConceptualEntity": "_measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__measure": {
+			          "Target": {
+			            "Entity": "entity__measure"
+			          }
+			        },
+			        "entity__measure.forecast_group_by_datedynamic_stepwise_3Month": {
+			          "Target": {
+			            "Entity": "entity__measure.forecast_group_by_datedynamic_stepwise_3Month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__measure"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.forecast_group_by_datedynamic_stepwise_3Month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_forecast_group_by_datedynamic_stepwise_3Month"
+			        }
+			      ]
+			    },
+			    "entity__measure_has_date_difference": {
+			      "Binding": {
+			        "ConceptualEntity": "_measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__measure": {
+			          "Target": {
+			            "Entity": "entity__measure"
+			          }
+			        },
+			        "entity__measure.date_difference": {
+			          "Target": {
+			            "Entity": "entity__measure.date_difference"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__measure"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.date_difference"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_date_difference"
+			        }
+			      ]
+			    },
+			    "entity__measure_has_total_cases_group_by_date": {
+			      "Binding": {
+			        "ConceptualEntity": "_measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__measure": {
+			          "Target": {
+			            "Entity": "entity__measure"
+			          }
+			        },
+			        "entity__measure.total_cases_group_by_date": {
+			          "Target": {
+			            "Entity": "entity__measure.total_cases_group_by_date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__measure"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.total_cases_group_by_date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_total_cases_group_by_date"
+			        }
+			      ]
+			    },
+			    "entity__measure_has_forecast_dynamic_stepwise_3Month": {
+			      "Binding": {
+			        "ConceptualEntity": "_measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__measure": {
+			          "Target": {
+			            "Entity": "entity__measure"
+			          }
+			        },
+			        "entity__measure.forecast_dynamic_stepwise_3Month": {
+			          "Target": {
+			            "Entity": "entity__measure.forecast_dynamic_stepwise_3Month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__measure"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.forecast_dynamic_stepwise_3Month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_forecast_dynamic_stepwise_3Month"
+			        }
+			      ]
+			    },
+			    "covid_case_has_entity__measure_total_cases_3Month_avg": {
+			      "Binding": {
+			        "ConceptualEntity": "Covid_Cases"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "covid_case": {
+			          "Target": {
+			            "Entity": "covid_case"
+			          }
+			        },
+			        "entity__measure.total_cases_3Month_avg": {
+			          "Target": {
+			            "Entity": "entity__measure.total_cases_3Month_avg"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "covid_case"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.total_cases_3Month_avg"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "covid_cases_have_total_cases_3Month_avg"
+			        }
+			      ]
+			    },
+			    "covid_case_has_entity__measure_total_cases__forecast": {
+			      "Binding": {
+			        "ConceptualEntity": "Covid_Cases"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "covid_case": {
+			          "Target": {
+			            "Entity": "covid_case"
+			          }
+			        },
+			        "entity__measure.total_cases__forecast": {
+			          "Target": {
+			            "Entity": "entity__measure.total_cases__forecast"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "covid_case"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.total_cases__forecast"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "covid_cases_have_total_cases__forecast"
+			        }
+			      ]
+			    },
+			    "growth_rate_interval_has_entity__measure_label_growth_rate_death_case": {
+			      "Binding": {
+			        "ConceptualEntity": "Growth Rate Interval"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "growth_rate_interval": {
+			          "Target": {
+			            "Entity": "growth_rate_interval"
+			          }
+			        },
+			        "entity__measure.label_growth_rate_death_case": {
+			          "Target": {
+			            "Entity": "entity__measure.label_growth_rate_death_case"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "growth_rate_interval"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.label_growth_rate_death_case"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "growth_rate_intervals_have_label_growth_rate_death_case"
+			        }
+			      ]
+			    },
+			    "covid_case_has_entity__measure_label_growth_rate_death_case": {
+			      "Binding": {
+			        "ConceptualEntity": "Covid_Cases"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "covid_case": {
+			          "Target": {
+			            "Entity": "covid_case"
+			          }
+			        },
+			        "entity__measure.label_growth_rate_death_case": {
+			          "Target": {
+			            "Entity": "entity__measure.label_growth_rate_death_case"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "covid_case"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.label_growth_rate_death_case"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "covid_cases_have_label_growth_rate_death_case"
+			        }
+			      ]
+			    },
+			    "covid_case_has_entity__measure_growth_rate_death_cases_": {
+			      "Binding": {
+			        "ConceptualEntity": "Covid_Cases"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "covid_case": {
+			          "Target": {
+			            "Entity": "covid_case"
+			          }
+			        },
+			        "entity__measure.growth_rate_death_cases_": {
+			          "Target": {
+			            "Entity": "entity__measure.growth_rate_death_cases_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "covid_case"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.growth_rate_death_cases_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "covid_cases_have_growth_rate_death_cases_"
+			        }
+			      ]
+			    },
 			    "date_table_has_SortMonthyear": {
 			      "Binding": {
 			        "ConceptualEntity": "DateTable"
@@ -4193,6 +5635,39 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
+			    "growth_rate_interval_has_entity__measure_label_growth_rate_recovered_cases": {
+			      "Binding": {
+			        "ConceptualEntity": "Growth Rate Interval"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "growth_rate_interval": {
+			          "Target": {
+			            "Entity": "growth_rate_interval"
+			          }
+			        },
+			        "entity__measure.label_growth_rate_recovered_cases": {
+			          "Target": {
+			            "Entity": "entity__measure.label_growth_rate_recovered_cases"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "growth_rate_interval"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.label_growth_rate_recovered_cases"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "growth_rate_intervals_have_label_growth_rate_recovered_cases"
+			        }
+			      ]
+			    },
 			    "covid_case_has_entity__measure_label_growth_rate_recovered_cases": {
 			      "Binding": {
 			        "ConceptualEntity": "Covid_Cases"
@@ -4256,6 +5731,39 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "covid_cases_have_growth_rate_recovered_cases_"
+			        }
+			      ]
+			    },
+			    "growth_rate_interval_has_entity__measure_label_growth_rate_positive_cases": {
+			      "Binding": {
+			        "ConceptualEntity": "Growth Rate Interval"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "growth_rate_interval": {
+			          "Target": {
+			            "Entity": "growth_rate_interval"
+			          }
+			        },
+			        "entity__measure.label_growth_rate_positive_cases": {
+			          "Target": {
+			            "Entity": "entity__measure.label_growth_rate_positive_cases"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "growth_rate_interval"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.label_growth_rate_positive_cases"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "growth_rate_intervals_have_label_growth_rate_positive_cases"
 			        }
 			      ]
 			    },
@@ -4358,7 +5866,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "covid_case_has_entity__measure_growth_rate_positive_case_": {
+			    "covid_case_has_entity__measure_growth_rate_positive_cases_": {
 			      "Binding": {
 			        "ConceptualEntity": "Covid_Cases"
 			      },
@@ -4369,9 +5877,9 @@ cultureInfo en-US
 			            "Entity": "covid_case"
 			          }
 			        },
-			        "entity__measure.growth_rate_positive_case_": {
+			        "entity__measure.growth_rate_positive_cases_": {
 			          "Target": {
-			            "Entity": "entity__measure.growth_rate_positive_case_"
+			            "Entity": "entity__measure.growth_rate_positive_cases_"
 			          }
 			        }
 			      },
@@ -4382,12 +5890,12 @@ cultureInfo en-US
 			              "Role": "covid_case"
 			            },
 			            "Object": {
-			              "Role": "entity__measure.growth_rate_positive_case_"
+			              "Role": "entity__measure.growth_rate_positive_cases_"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "covid_cases_have_growth_rate_positive_case_"
+			          "ID": "covid_cases_have_growth_rate_positive_cases_"
 			        }
 			      ]
 			    },
@@ -4454,6 +5962,39 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "date_tables_have_label_title"
+			        }
+			      ]
+			    },
+			    "growth_rate_interval_has_entity__measure_label_growth_rate_total_cases": {
+			      "Binding": {
+			        "ConceptualEntity": "Growth Rate Interval"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "growth_rate_interval": {
+			          "Target": {
+			            "Entity": "growth_rate_interval"
+			          }
+			        },
+			        "entity__measure.label_growth_rate_total_cases": {
+			          "Target": {
+			            "Entity": "entity__measure.label_growth_rate_total_cases"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "growth_rate_interval"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.label_growth_rate_total_cases"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "growth_rate_intervals_have_label_growth_rate_total_cases"
 			        }
 			      ]
 			    },
@@ -5414,7 +6955,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "covid_case_has_total_cases_positive__negative": {
+			    "covid_case_has_total_cases_positive_negative": {
 			      "Binding": {
 			        "ConceptualEntity": "Covid_Cases"
 			      },
@@ -5425,9 +6966,9 @@ cultureInfo en-US
 			            "Entity": "covid_case"
 			          }
 			        },
-			        "covid_case.total_cases_positive__negative": {
+			        "covid_case.total_cases_positive_negative": {
 			          "Target": {
-			            "Entity": "covid_case.total_cases_positive__negative"
+			            "Entity": "covid_case.total_cases_positive_negative"
 			          }
 			        }
 			      },
@@ -5438,12 +6979,12 @@ cultureInfo en-US
 			              "Role": "covid_case"
 			            },
 			            "Object": {
-			              "Role": "covid_case.total_cases_positive__negative"
+			              "Role": "covid_case.total_cases_positive_negative"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "covid_cases_have_total_cases_positive__negatives"
+			          "ID": "covid_cases_have_total_cases_positive_negatives"
 			        }
 			      ]
 			    },
@@ -5793,6 +7334,39 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "covid_cases_are_in_states"
+			        }
+			      ]
+			    },
+			    "growth_rate_interval_has_growth_rate_interval_value": {
+			      "Binding": {
+			        "ConceptualEntity": "Growth Rate Interval"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "growth_rate_interval": {
+			          "Target": {
+			            "Entity": "growth_rate_interval"
+			          }
+			        },
+			        "growth_rate_interval.growth_rate_interval_value": {
+			          "Target": {
+			            "Entity": "growth_rate_interval.growth_rate_interval_value"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "growth_rate_interval"
+			            },
+			            "Object": {
+			              "Role": "growth_rate_interval.growth_rate_interval_value"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "growth_rate_intervals_have_growth_rate_interval_value"
 			        }
 			      ]
 			    },

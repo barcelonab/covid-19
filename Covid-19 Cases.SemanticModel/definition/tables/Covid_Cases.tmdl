@@ -74,12 +74,12 @@ table Covid_Cases
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'total_cases_positive + negative'
+	column total_cases_positive_negative
 		dataType: int64
 		formatString: 0
 		lineageTag: d9f3ca03-ce07-4e6b-b06d-57ac66d5a6d4
 		summarizeBy: sum
-		sourceColumn: total_cases_positive + negative
+		sourceColumn: total_cases_positive_negative
 
 		annotation SummarizationSetBy = Automatic
 
@@ -133,7 +133,7 @@ table Covid_Cases
 				    #"Removed Columns1" = Table.RemoveColumns(#"Renamed Columns",{"total_test_results", "total_test_results_increase_from_previous_day"}),
 				    #"Renamed Columns1" = Table.RenameColumns(#"Removed Columns1",{{"death_increase", "death_increase_calculated_from_current day - previous day"}, {"total", "total_cases"}}),
 				    #"Replaced Value null to 0" = Table.ReplaceValue(#"Renamed Columns1",null,0,Replacer.ReplaceValue,{"negative", "hospitalized_currently", "recovered", "death", "hospitalized"}),
-				    #"Renamed Columns2" = Table.RenameColumns(#"Replaced Value null to 0",{{"total_cases", "total_cases_positive + negative"}})
+				    #"Renamed Columns2" = Table.RenameColumns(#"Replaced Value null to 0",{{"total_cases", "total_cases_positive_negative"}})
 				in
 				    #"Renamed Columns2"
 

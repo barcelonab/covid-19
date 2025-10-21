@@ -76,7 +76,7 @@ table DateTable
 	partition DateTable = calculated
 		mode: import
 		source =
-				VAR _cal = CALENDAR(MIN(Covid_Cases[date]), MAX(Covid_Cases[date]))
+				VAR _cal = CALENDAR(MIN(Covid_Cases[date]), EOMONTH(MAX(Covid_Cases[date]), 3))
 				            RETURN
 				                ADDCOLUMNS(_cal,
 				                    "MonthNumber", MONTH([Date]),
