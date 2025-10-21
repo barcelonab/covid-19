@@ -118,7 +118,7 @@ table _measures
 
 	measure 'Increase of Death Cases from Yesterday' =
 			CALCULATE(SUM(Covid_Cases[death_increase_calculated_from_current day - previous day]),
-			                                                    Covid_Cases[date] = MAX(Covid_Cases[date]))
+			                                                    DateTable[Date] = MAX(DateTable[Date]))
 		formatString: #,0
 		displayFolder: Death Cases
 		lineageTag: 911a1c77-9cce-4af1-bc17-33d2c0bff706
@@ -155,9 +155,9 @@ table _measures
 			                                            _week, 0)
 			                                )*/
 			
-			                            VAR _dateselected = MAX(Covid_Cases[date]) - 'Growth Rate Interval'[Growth Rate Interval Value]
+			                            VAR _dateselected = MAX(DateTable[Date]) - 'Growth Rate Interval'[Growth Rate Interval Value]
 			                            VAR _total = CALCULATE([Total Cases TD],
-			                                                    Covid_Cases[date] =  _dateselected
+			                                                    DateTable[Date] =  _dateselected
 			                                                )
 			
 			                            RETURN
@@ -195,9 +195,9 @@ table _measures
 			                                    [Total Cases TD] - _week
 			                                )*/
 			
-			                            VAR _dateselected = MAX(Covid_Cases[date]) - ('Growth Rate Interval'[Growth Rate Interval Value])
+			                            VAR _dateselected = MAX(DateTable[Date]) - ('Growth Rate Interval'[Growth Rate Interval Value])
 			                            VAR _total = CALCULATE([Total Cases TD],
-			                                                    Covid_Cases[date] =  _dateselected
+			                                                    DateTable[Date] =  _dateselected
 			                                                )
 			
 			                            RETURN
@@ -244,9 +244,9 @@ table _measures
 			                                    )*/
 			
 			                                    
-			                                VAR _selecteddate = MAX(Covid_Cases[date]) - 'Growth Rate Interval'[Growth Rate Interval Value]
+			                                VAR _selecteddate = MAX(DateTable[Date]) - 'Growth Rate Interval'[Growth Rate Interval Value]
 			                                VAR _total = CALCULATE([Total Cases TD], 
-			                                                    Covid_Cases[date] = _selecteddate
+			                                                    DateTable[Date] = _selecteddate
 			                                                    )
 			
 			                                RETURN
@@ -260,7 +260,7 @@ table _measures
 		displayFolder: Growth Rate\Total Cases
 		lineageTag: 79f48080-fb55-483a-acdc-a939c4b62f04
 
-	measure 'Label Title' = "Covid Cases as of " & FORMAT(MIN(Covid_Cases[date]), "mmm dd, YYYY") & " - " & FORMAT(MAX(Covid_Cases[date]), "mmm dd, YYYY")
+	measure 'Label Title' = "Covid Cases as of " & FORMAT(MIN(DateTable[Date]), "mmm dd, YYYY") & " - " & FORMAT(MAX(DateTable[Date]), "mmm dd, YYYY")
 		displayFolder: Misc
 		lineageTag: 11ee275d-ff25-4b15-9682-2bb0dc9b77f4
 
@@ -297,9 +297,9 @@ table _measures
 			                         _week
 			                    )*/
 			
-			                                VAR _dateselected = MAX(Covid_Cases[date]) - ('Growth Rate Interval'[Growth Rate Interval Value] - 1)
+			                                VAR _dateselected = MAX(DateTable[Date]) - ('Growth Rate Interval'[Growth Rate Interval Value] - 1)
 			                                VAR _total = CALCULATE(SUM(Covid_Cases[positive_increase_from_previous_day]),
-			                                                        Covid_Cases[date] >= _dateselected
+			                                                        DateTable[Date] >= _dateselected
 			                                                    )
 			
 			                                RETURN
@@ -347,9 +347,9 @@ table _measures
 			                                                    _week, 0)
 			                                    )*/
 			
-			                                    VAR _dateselected = MAX(Covid_Cases[date]) - 'Growth Rate Interval'[Growth Rate Interval Value]
+			                                    VAR _dateselected = MAX(DateTable[Date]) - 'Growth Rate Interval'[Growth Rate Interval Value]
 			                                    VAR _total = CALCULATE(SUM(Covid_Cases[positive_increase_from_previous_day]),
-			                                                            Covid_Cases[date] <=  _dateselected
+			                                                            DateTable[Date] <=  _dateselected
 			                                                        )
 			
 			                                    RETURN
@@ -387,9 +387,9 @@ table _measures
 			                                    [Total Recovered Cases TD] - _week
 			                                    ) */
 			
-			                                VAR _dateselected = MAX(Covid_Cases[date]) - ('Growth Rate Interval'[Growth Rate Interval Value])
+			                                VAR _dateselected = MAX(DateTable[Date]) - ('Growth Rate Interval'[Growth Rate Interval Value])
 			                                VAR _total = CALCULATE([Total Recovered Cases TD],
-			                                                        Covid_Cases[date] = _dateselected
+			                                                        DateTable[Date] = _dateselected
 			                                                    )
 			
 			                                RETURN
@@ -431,9 +431,9 @@ table _measures
 			                                        _week
 			                                    )*/
 			
-			                            VAR _dateseleceted = MAX(Covid_Cases[date]) - ('Growth Rate Interval'[Growth Rate Interval Value] - 1)
+			                            VAR _dateseleceted = MAX(DateTable[Date]) - ('Growth Rate Interval'[Growth Rate Interval Value] - 1)
 			                            VAR _total = CALCULATE(SUM(Covid_Cases[death_increase_calculated_from_current day - previous day]),
-			                                                    Covid_Cases[date] >= _dateseleceted
+			                                                    DateTable[Date] >= _dateseleceted
 			                                                )
 			
 			                            RETURN
@@ -488,9 +488,9 @@ table _measures
 			                                            )
 			                                    )*/
 			
-			                                    VAR _dateselected = MAX(Covid_Cases[date]) - 'Growth Rate Interval'[Growth Rate Interval Value]
+			                                    VAR _dateselected = MAX(DateTable[Date]) - 'Growth Rate Interval'[Growth Rate Interval Value]
 			                                    VAR _total = CALCULATE(SUM(Covid_Cases[positive_increase_from_previous_day]),
-			                                                            Covid_Cases[date] < _dateselected
+			                                                            DateTable[Date] < _dateselected
 			                                                        )
 			
 			                                    RETURN
@@ -531,9 +531,9 @@ table _measures
 			                                                    _week, 0 )
 			                                        )*/
 			
-			                                VAR _dateselected = MAX(Covid_Cases[date]) - 'Growth Rate Interval'[Growth Rate Interval Value]
+			                                VAR _dateselected = MAX(DateTable[Date]) - 'Growth Rate Interval'[Growth Rate Interval Value]
 			                                VAR _total = CALCULATE([Total Recovered Cases TD],
-			                                                        Covid_Cases[date] = _dateselected
+			                                                        DateTable[Date] = _dateselected
 			                                                    )
 			
 			                                RETURN
@@ -583,9 +583,9 @@ table _measures
 			                                                )
 			                                    )    */
 			
-			                                VAR _dateselected = MAX(Covid_Cases[date]) - 'Growth Rate Interval'[Growth Rate Interval Value]
+			                                VAR _dateselected = MAX(DateTable[Date]) - 'Growth Rate Interval'[Growth Rate Interval Value]
 			                                VAR _total = CALCULATE([Total Recovered Cases TD],
-			                                                        Covid_Cases[date] = _dateselected
+			                                                        DateTable[Date] = _dateselected
 			                                                    )
 			                                        
 			                                RETURN
@@ -622,9 +622,9 @@ table _measures
 			                                    "Month",
 			                                        )*/
 			
-			                            VAR _dateselected = MAX(Covid_Cases[date]) - 'Growth Rate Interval'[Growth Rate Interval Value]
+			                            VAR _dateselected = MAX(DateTable[Date]) - 'Growth Rate Interval'[Growth Rate Interval Value]
 			                            VAR _total = CALCULATE(sum(Covid_Cases[death_increase_calculated_from_current day - previous day]),
-			                                                    Covid_Cases[date] <= _dateselected
+			                                                    DateTable[Date] <= _dateselected
 			                                                )
 			
 			                            RETURN
@@ -638,9 +638,9 @@ table _measures
 		lineageTag: 2432d348-d687-43c4-b39b-b975bbe70040
 
 	measure Label_Growth_Rate_Death_Case =
-			VAR _dateselected = MAX(Covid_Cases[date]) - 'Growth Rate Interval'[Growth Rate Interval Value]
+			VAR _dateselected = MAX(DateTable[Date]) - 'Growth Rate Interval'[Growth Rate Interval Value]
 			                            VAR _total = CALCULATE(SUM(Covid_Cases[death_increase_calculated_from_current day - previous day]),
-			                                                    Covid_Cases[date] > _dateselected
+			                                                    DateTable[Date] > _dateselected
 			                                                )
 			
 			                            RETURN
@@ -651,315 +651,6 @@ table _measures
 			                                    )
 		displayFolder: Growth Rate\Death Cases
 		lineageTag: 7d3706d3-fb3b-48e8-a0be-88d800592333
-
-	measure 'Total Cases & Forecast' = ```
-			
-			VAR _getlatestnoofcases = CALCULATE([Total Cases TD], 
-			                                    ALLSELECTED(Covid_Cases), 
-			                                    Covid_Cases[date] = MAXX(ALL(Covid_Cases), 
-			                                                        Covid_Cases[date]
-			                                                        )
-			                                )
-			
-			-- Get the last 3 months of ACTUAL data and Average
-			VAR _previoussales = CALCULATE([Total Cases TD],
-			                                DateTable[Date] = EOMONTH(MAX(DateTable[Date]),-1)
-			                            )
-			
-			VAR _avg3months= CALCULATE([Total Cases 3-Month Avg],
-			                                DateTable[Date] = EOMONTH(MAX(DateTable[Date]),-1)
-			                            )
-			
-			VAR _sumavgsales = _avg3months + _previoussales
-			
-			RETURN
-			    IF(NOT ISBLANK([Total Cases TD]),
-			        [Total Cases TD],
-			        _getlatestnoofcases + _avg3months)
-			                            
-			```
-		displayFolder: Forecast
-		lineageTag: 09287e0b-e4f4-4ca1-8377-c22455b1672a
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure 'Total Cases 3-Month Avg' = ```
-			VAR _prevmonth = CALCULATE([Total Cases TD],
-			                                                        ALLSELECTED(Covid_Cases), 
-			                                                        DateTable[Date] = EOMONTH(MAX(DateTable[Date]), -3)
-			                                                    )
-			
-			                            VAR _curmonth = CALCULATE([Total Cases TD],
-			                                                        ALLSELECTED(Covid_Cases), 
-			                                                        DateTable[Date] = MAX(DateTable[Date])
-			                                                    )
-			
-			                            RETURN
-			                                IF(NOT ISBLANK([Total Cases TD]),   
-			                                    DIVIDE(_curmonth - _prevmonth,
-			                                            3
-			                                        )
-			                                )
-			
-			
-			```
-		displayFolder: Forecast
-		lineageTag: 867e54db-ffc0-4dc3-ba79-2476a2c5e46b
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure 'Forecast (Dynamic Stepwise 3-Month)' = ```
-			
-			VAR _lastActualDate =
-			    CALCULATE(
-			        MAX(Covid_Cases[date]),
-			        REMOVEFILTERS(Covid_Cases)
-			    )
-			
-			VAR _forecastDate = MAX(DateTable[Date])
-			
-			-- Determine how many months ahead the current date is
-			VAR _monthsAhead =
-			    DATEDIFF(
-			        _lastActualDate,
-			        _forecastdate,
-			        MONTH
-			    )      
-			
-			-- Get the value of last 3 month
-			VAR _prev3months = CALCULATE([Total Cases TD],
-			                            ALLSELECTED(Covid_Cases), 
-			                            DateTable[Date] = EOMONTH(MAX(DateTable[Date]), 
-			                                                    -4
-			                                                    )
-			                            )
-			
-			VAR _prev4months = CALCULATE([Total Cases TD],
-			                            ALLSELECTED(Covid_Cases), 
-			                            DateTable[Date] = EOMONTH(MAX(DateTable[Date]), 
-			                                                    -5
-			                                                    )
-			                            )
-			--for the first forecast
-			VAR _previouscases = CALCULATE([Total Cases TD],
-			                                DateTable[Date] = EOMONTH(MAX(DateTable[Date]),-(_monthsAhead))
-			                            )
-			
-			VAR _avg3months= CALCULATE([Total Cases 3-Month Avg],
-			                            DateTable[Date] = EOMONTH(MAX(DateTable[Date]),-(_monthsAhead))
-			                        )
-			
-			VAR _sumavgcases = _avg3months + _previouscases
-			
-			-- Recursive-style loop simulation
-			-- If 1 month ahead → use base forecast
-			-- If >1 → use rolling average of previous 3 (mix of actual + forecast)
-			VAR _forecast =
-			    SWITCH(
-			        TRUE(),
-			        _monthsAhead = 1, _sumavgcases,
-			
-			        _monthsAhead = 2,
-			            --For the second forecast
-			            VAR _tot3monthdiff = DIVIDE(_sumavgcases - _prev3months,
-			                                        3
-			                                        )
-			            VAR _2sumavgcases = _sumavgcases + _tot3monthdiff
-			            RETURN
-			                _2sumavgcases,
-			                
-			        _monthsAhead = 3,
-			            --For the third forecast
-			            VAR _tot4monthdiff = DIVIDE(_sumavgcases - _prev4months,
-			                                        3
-			                                        )
-			            VAR _copy2sumavgcases = _sumavgcases +  _tot4monthdiff
-			            VAR _totcases = DIVIDE(_copy2sumavgcases - _prev3months,
-			                                    3
-			                                )
-			            VAR _3sumavgcases = _totcases + _copy2sumavgcases
-			            RETURN
-			                _3sumavgcases,
-			                
-			        [Total Cases TD]
-			        )
-			
-			    
-			
-			RETURN
-			--IF(_isFutureMonth, _forecast)
-			_forecast
-			```
-		displayFolder: Forecast
-		lineageTag: c24dcb4e-684b-4eb7-80da-f3fc5d7a4fdf
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure 'Total Cases Group by Date' = ```
-			
-			VAR _mindate = CALCULATE(MIN(DateTable[Date]), 
-			                        ALLSELECTED(DateTable)
-			                        )
-			
-			VAR _lastActualDate =
-			    CALCULATE(
-			        MAX(Covid_Cases[date]),
-			        REMOVEFILTERS(Covid_Cases)
-			            )
-			
-			VAR _forecastDate = MAX(DateTable[Date])
-			
-			VAR _prevmonth = CALCULATE([Total Cases TD],
-			                            ALLSELECTED(Covid_Cases), 
-			                            DateTable[Date] = EOMONTH(MAX(DateTable[Date]), -1)
-			                        )
-			
-			VAR _curmonth = CALCULATE([Total Cases TD],
-			                            ALLSELECTED(Covid_Cases), 
-			                            DateTable[Date] = MAX(DateTable[Date])
-			                        )
-			
-			VAR _monthsAhead = DATEDIFF(_lastActualDate,
-			                            _forecastDate,
-			                            MONTH
-			                        )
-			
-			
-			
-			VAR _totalcases =
-			    SWITCH(TRUE(),
-			        _monthsAhead = 1,"",
-			
-			        _monthsAhead = 2, "",
-			
-			        _monthsAhead = 3, "",
-			        
-			        IF(NOT ISBLANK([Total Cases TD]) && _mindate <> MIN(DateTable[Date]),   
-			            _curmonth - _prevmonth
-			            )
-			        )
-			
-			RETURN
-			    _totalcases    
-			
-			```
-		displayFolder: Forecast
-		lineageTag: 27fabac6-2988-4e99-bca6-baf77279066b
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure 'Date Difference' =
-			
-			/*VAR _forecastdate =
-			    CALCULATE(MAX(DateTable[Date]), REMOVEFILTERS(DateTable))
-			
-			VAR _lastActualDate = MAX(DateTable[Date])
-			*/
-			VAR _lastActualDate =
-			    CALCULATE(
-			        MAX(Covid_Cases[date]),
-			        REMOVEFILTERS(Covid_Cases)
-			    )
-			
-			VAR _currentDate = MAX(DateTable[Date])
-			
-			-- Determine how many months ahead the current date is
-			VAR _monthsAhead =
-			    DATEDIFF(
-			        EOMONTH(_lastActualDate, 0),
-			        EOMONTH(_currentDate, 0),
-			        MONTH
-			    )
-			
-			RETURN
-			_monthsAhead
-		formatString: 0
-		displayFolder: Forecast
-		lineageTag: d975d4b6-7905-4400-b1cd-4e189d637515
-
-	measure 'Forecast Group by Date(Dynamic Stepwise 3-Month)' = ```
-			
-			VAR _lastActualDate =
-			    CALCULATE(
-			        MAX(Covid_Cases[date]),
-			        REMOVEFILTERS(Covid_Cases)
-			    )
-			
-			VAR _forecastDate = MAX(DateTable[Date])
-			
-			-- Determine how many months ahead the current date is
-			VAR _monthsAhead =
-			    DATEDIFF(
-			        _lastActualDate,
-			        _forecastdate,
-			        MONTH
-			    )      
-			
-			-- Get the value of last 3 month
-			VAR _prev3months = CALCULATE([Total Cases TD],
-			                            ALLSELECTED(Covid_Cases), 
-			                            DateTable[Date] = EOMONTH(MAX(DateTable[Date]), 
-			                                                    -4
-			                                                    )
-			                            )
-			
-			VAR _prev4months = CALCULATE([Total Cases TD],
-			                            ALLSELECTED(Covid_Cases), 
-			                            DateTable[Date] = EOMONTH(MAX(DateTable[Date]), 
-			                                                    -5
-			                                                    )
-			                            )
-			--for the first forecast
-			VAR _previouscases = CALCULATE([Total Cases TD],
-			                                DateTable[Date] = EOMONTH(MAX(DateTable[Date]),-(_monthsAhead))
-			                            )
-			
-			VAR _avg3months= CALCULATE([Total Cases 3-Month Avg],
-			                            DateTable[Date] = EOMONTH(MAX(DateTable[Date]),-(_monthsAhead))
-			                        )
-			
-			VAR _sumavgcases = _avg3months + _previouscases
-			
-			-- Recursive-style loop simulation
-			-- If 1 month ahead → use base forecast
-			-- If >1 → use rolling average of previous 3 (mix of actual + forecast)
-			VAR _forecast =
-			    SWITCH(
-			        TRUE(),
-			        _monthsAhead = 1, _avg3months,
-			
-			        _monthsAhead = 2,
-			            --For the second forecast
-			            VAR _tot3monthdiff = DIVIDE(_sumavgcases - _prev3months,
-			                                        3
-			                                        )
-			            RETURN
-			                _tot3monthdiff,
-			                
-			        _monthsAhead = 3,
-			            --For the third forecast
-			            VAR _tot4monthdiff = DIVIDE(_sumavgcases - _prev4months,
-			                                        3
-			                                        )
-			            VAR _copy2sumavgcases = _sumavgcases +  _tot4monthdiff
-			            VAR _totcases = DIVIDE(_copy2sumavgcases - _prev3months,
-			                        3
-			                    )
-			            RETURN
-			                _totcases,
-			                
-			        [Total Cases Group by Date]
-			        )
-			
-			    
-			
-			RETURN
-			--IF(_isFutureMonth, _forecast)
-			_forecast
-			```
-		formatString: #,0
-		displayFolder: Forecast
-		lineageTag: 34f3c518-342a-4098-862c-8cfaa1ceb761
 
 	partition _measures = m
 		mode: import
