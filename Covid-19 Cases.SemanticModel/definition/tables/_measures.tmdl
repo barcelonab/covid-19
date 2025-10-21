@@ -1,33 +1,33 @@
 table _measures
 	lineageTag: 6096b91c-6855-4cd7-8d19-89eb00b314d1
 
-	measure 'Total Positive Cases TD' = CALCULATE(SUM(Covid_Cases[positive]), DateTable[Date] = MAX(DateTable[Date]))
+	measure 'Total Positive Cases TD' = CALCULATE(SUM(Covid_Cases[positive]), Covid_Cases[date] = MAX(Covid_Cases[date]))
 		formatString: #,0
 		displayFolder: Positive Cases
 		lineageTag: 53d32988-9800-4a5d-a410-68e339b44065
 
-	measure 'Total Death Cases TD' = CALCULATE(SUM(Covid_Cases[death]), DateTable[Date] = MAX(DateTable[Date]))
+	measure 'Total Death Cases TD' = CALCULATE(SUM(Covid_Cases[death]), Covid_Cases[date] = MAX(Covid_Cases[date]))
 		formatString: #,0
 		displayFolder: Death Cases
 		lineageTag: 5a6db74d-3707-42b0-acbd-0c81f12338cd
 
-	measure 'Total Cases TD' = CALCULATE(SUM(Covid_Cases[total_cases_positive + negative]), DateTable[Date] = MAX(DateTable[Date]))
+	measure 'Total Cases TD' = CALCULATE(SUM(Covid_Cases[total_cases_positive_negative]), Covid_Cases[date] = MAX(Covid_Cases[date]))
 		formatString: #,0
 		displayFolder: Total Cases
 		lineageTag: 457f0dba-0950-4e0b-b3f8-6732c5510ad7
 
-	measure 'Total Recovered Cases TD' = CALCULATE(SUM(Covid_Cases[recovered]), DateTable[Date] = MAX(DateTable[Date]))
+	measure 'Total Recovered Cases TD' = CALCULATE(SUM(Covid_Cases[recovered]), Covid_Cases[date] = MAX(Covid_Cases[date]))
 		formatString: #,0
 		displayFolder: Recovered Cases
 		lineageTag: b23815d5-adb0-4ca7-9868-2bc5fff8edea
 
-	measure 'Increase of positive Cases from Yesterday' = CALCULATE(SUM(Covid_Cases[positive_increase_from_previous_day]), DateTable[Date] = MAX(DateTable[Date]))
+	measure 'Increase of positive Cases from Yesterday' = CALCULATE(SUM(Covid_Cases[positive_increase_from_previous_day]), Covid_Cases[date] = MAX(Covid_Cases[date]))
 		formatString: #,0
 		displayFolder: Positive Cases
 		lineageTag: 84dc6e8a-88ff-4dbc-b0c7-54f9ca84f403
 
 	measure Label_Positive_Increase_Decrease_Yesterday = ```
-			VAR _positiveincrease = CALCULATE(SUM(Covid_Cases[positive]), DateTable[Date] = MAX(DateTable[Date]))
+			VAR _positiveincrease = CALCULATE(SUM(Covid_Cases[positive]), Covid_Cases[date] = MAX(Covid_Cases[date]))
 			
 			                                    RETURN
 			                                        SWITCH(TRUE(),
@@ -46,8 +46,8 @@ table _measures
 		lineageTag: 78d12c20-8c51-4b13-bcc9-4462e34088c0
 
 	measure 'Increase of Total Cases yesterday' = ```
-			VAR _prevdate = MAX(DateTable[Date]) - 1
-			                                    VAR _prevtot = CALCULATE(SUM(Covid_Cases[total_cases_positive + negative]), DateTable[Date] = _prevdate)
+			VAR _prevdate = MAX(Covid_Cases[date]) - 1
+			                                    VAR _prevtot = CALCULATE(SUM(Covid_Cases[total_cases_positive_negative]), Covid_Cases[date] = _prevdate)
 			
 			                                    RETURN
 			                                        [Total Cases TD] - _prevtot                                   
@@ -57,8 +57,8 @@ table _measures
 		lineageTag: d5e431f8-1f87-4536-b9a5-67338dd3ec3c
 
 	measure Label_Total_Increase_Decrease_Yesterday =
-			VAR _prevdate = MAX(DateTable[Date]) -1
-			                                    VAR _totyesterday = CALCULATE(SUM(Covid_Cases[total_cases_positive + negative]), DateTable[Date] = _prevdate)
+			VAR _prevdate = MAX(Covid_Cases[date]) -1
+			                                    VAR _totyesterday = CALCULATE(SUM(Covid_Cases[total_cases_positive_negative]), Covid_Cases[date] = _prevdate)
 			
 			                                    RETURN
 			                                        SWITCH(TRUE(),
@@ -75,8 +75,8 @@ table _measures
 		lineageTag: 25f3e232-4bd2-4fd0-b7a8-3f0577c8836e
 
 	measure Label_Recovered_Increase_Decrease_Yesterday =
-			VAR _prevdate = MAX(DateTable[Date]) -1
-			                                    VAR _totyesterday = CALCULATE(SUM(Covid_Cases[recovered]), DateTable[Date] = _prevdate)
+			VAR _prevdate = MAX(Covid_Cases[date]) -1
+			                                    VAR _totyesterday = CALCULATE(SUM(Covid_Cases[recovered]), Covid_Cases[date] = _prevdate)
 			
 			                                    RETURN
 			                                        SWITCH(TRUE(),
@@ -88,8 +88,8 @@ table _measures
 		lineageTag: 6a5c5f4d-5125-4347-bd39-fcc161c230c6
 
 	measure 'Increase of Recovered Cases yesterday' =
-			VAR _prevdate = MAX(DateTable[Date]) - 1
-			                                        VAR _prevtot = CALCULATE(SUM(Covid_Cases[recovered]), DateTable[Date] = _prevdate)
+			VAR _prevdate = MAX(Covid_Cases[date]) - 1
+			                                        VAR _prevtot = CALCULATE(SUM(Covid_Cases[recovered]), Covid_Cases[date] = _prevdate)
 			
 			                                        RETURN
 			                                        [Total Recovered Cases TD] - _prevtot
@@ -104,7 +104,7 @@ table _measures
 
 	measure Label_Death_Increase_Decrease_from_Yesterday = ```
 			VAR _deathincrease = CALCULATE(SUM(Covid_Cases[death_increase_calculated_from_current day - previous day]), 
-			                                                    DateTable[Date] = MAX(DateTable[Date]))
+			                                                    Covid_Cases[date] = MAX(Covid_Cases[date]))
 			
 			                                    RETURN
 			                                        SWITCH(TRUE(),
