@@ -1,0 +1,79 @@
+Forecast (Dynamic Stepwise 3-Month) = 
+VAR _lastActualDate =
+    CALCULATE(
+        MAX(Covid_Cases[date]),
+        REMOVEFILTERS(Covid_Cases)
+    )
+
+VAR _forecastDate = MAX(DateTable[Date])
+
+-- Determine how many months ahead of the current date
+VAR _monthsAhead =
+    DATEDIFF(
+        _lastActualDate,
+        _forecastdate,
+        MONTH
+    )      
+
+-- Get the value of last 3 month
+VAR _prev3months = CALCULATE([Total Cases TD],
+                            ALLSELECTED(Covid_Cases), 
+                            DateTable[Date] = EOMONTH(MAX(DateTable[Date]), 
+                                                    -4
+                                                    )
+                            )
+
+VAR _prev4months = CALCULATE([Total Cases TD],
+                            ALLSELECTED(Covid_Cases), 
+                            DateTable[Date] = EOMONTH(MAX(DateTable[Date]), 
+                                                    -5
+                                                    )
+                            )
+
+VAR _previouscases = CALCULATE([Total Cases TD],
+                                DateTable[Date] = EOMONTH(MAX(DateTable[Date]),-(_monthsAhead))
+                            )
+
+VAR _avg3months= CALCULATE([Total Cases 3-Month Avg],
+                            DateTable[Date] = EOMONTH(MAX(DateTable[Date]),-(_monthsAhead))
+                        )
+
+VAR _sumavgcases = _avg3months + _previouscases
+
+-- Recursive-style loop simulation
+-- If 1 month ahead → use base forecast
+-- If >1 → use [Total Cases TD] measure
+VAR _forecast =
+    SWITCH(
+        TRUE(),
+        _monthsAhead = 1, _sumavgcases,
+
+        _monthsAhead = 2,
+            --For the second forecast
+            VAR _tot3monthdiff = DIVIDE(_sumavgcases - _prev3months,
+                                        3
+                                        )
+            VAR _2sumavgcases = _sumavgcases + _tot3monthdiff
+            RETURN
+                _2sumavgcases,
+                
+        _monthsAhead = 3,
+            --For the third forecast
+            VAR _tot4monthdiff = DIVIDE(_sumavgcases - _prev4months,
+                                        3
+                                        )
+            VAR _copy2sumavgcases = _sumavgcases +  _tot4monthdiff
+            VAR _totcases = DIVIDE(_copy2sumavgcases - _prev3months,
+                                    3
+                                )
+            VAR _3sumavgcases = _totcases + _copy2sumavgcases
+            RETURN
+                _3sumavgcases,
+                
+        [Total Cases TD]
+        )
+
+    
+
+RETURN
+_forecast
